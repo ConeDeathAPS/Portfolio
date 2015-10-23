@@ -1,0 +1,128 @@
+/*
+Properties marked with !important are overriding bootstrap properties
+
+COLOR PALETTE
+
+dark-grey: #393939
+dark-orange: #FF5A09
+medium-orange: #F3843E
+light-orange: #FF9900
+light-grey: #6E6E6E
+*/
+/* HEADER CLASSES TO BE SWAPPED BY JQUERY */
+.at_top {
+	/*These need to override whatever the original css was*/
+	position: fixed!important;
+	top: 0!important;
+}
+.stopped {
+	position: static;
+}
+/*END JQUERY HEADER CLASSES */
+/*Header and main container css */
+.header1 {
+	width: 100%;
+	height: 70px;
+	background-color: #FF9900;
+	box-shadow: 0px 3px 5px black;
+	z-index: 999;
+}
+.header2 {
+	width: 100%;
+	height: 70px;
+	position: static;
+	background-color: #6E6E6E;
+	box-shadow: 0px 3px 5px black;	
+	z-index: 1000;
+}
+.container {
+	background-image: url("images/sheet_music.jpg");
+	/*background-color: #FF5A09;*/
+	width: 1920px!important;
+	min-height: 1920px!important;
+	position: fixed;
+	top: 0;
+	z-index: -1!important;
+	overflow: scroll;
+}
+/*Musical piece and modal CSS */
+.musical_piece:first-child {
+	margin-top: 100px!important;
+}
+.musical_piece {
+	padding: 10px 10px!important;
+	background-color: #FF5A09; 
+	margin: 150px 500px!important;
+	box-shadow: 5px 5px 10px black;
+	overflow: hidden;
+	border: 5px solid rgba(255, 153, 0, .5);
+}
+h1 {
+	color: #393939!important;
+	text-align: center;
+	margin-bottom: 50px!important;
+}
+.get_sheet {
+	margin-left: 40%;
+}
+.composition_title {
+	margin-top: 10px!important;
+}
+.composition_title, .composition_name {
+	color: #393939;
+}
+.composition_name {
+	margin-left: 20px;
+}
+.expand-butt {
+	display: block!important;
+	margin: 0 auto;
+	color: #393939;
+	background-color: #FF5A09!important; 
+	-webkit-transition: 0.5s ease all;
+	-moz-transition: 0.5s ease all;
+	-o-transition: 0.5s ease all;
+	transition: 0.5s ease all;
+}
+	.expand-butt:hover {
+		background-color: #FF5A09!important;
+		color: white!important;
+	}
+	.clicked {
+		transform: rotateX(180deg);	  
+		-webkit-transition: 0.5s ease all;
+		-moz-transition: 0.5s ease all;
+		-o-transition: 0.5s ease all;
+		transition: 0.5s ease all;		
+	}
+	.un-clicked {
+		transform: rotateX(-180deg);	  
+		-webkit-transition: 0.5s ease all;
+		-moz-transition: 0.5s ease all;
+		-o-transition: 0.5s ease all;
+		transition: 0.5s ease all;		
+	}
+.btn {
+
+	border-radius: 0px!important;
+}
+.btn-default {
+	border: none!important;
+	background-color: #FF5A09!important;
+}
+	.btn-default:hover {
+		background-color: #FF9900!important;
+	}
+/*Recital component CSS */
+.sonnet {
+	margin-left: 30%!important;
+}
+.recital_piece {
+	padding: 10px 10px!important;
+	background-color: #393939; 
+	margin: 150px 500px!important;
+	box-shadow: 5px 5px 10px black;
+}
+.recital_piece h3, .recital_piece h4, .recital_piece p {
+	color: #FF9900;
+}

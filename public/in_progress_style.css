@@ -1,0 +1,22 @@
+/*
+dark-grey: #393939
+dark-orange: #FF5A09
+medium-orange: #F3843E
+light-orange: #FF9900
+light-grey: #6E6E6E
+*/
+
+body {
+	background-color: #FF9900!important;
+	width: 1920px;
+	height: 100%;
+}
+h1, h2 {
+	text-align: center;
+}
+.row {
+	margin-top: 16%;
+}
+a:hover {
+	color: #FF5A09!important;
+}

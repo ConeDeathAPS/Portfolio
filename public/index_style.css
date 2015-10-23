@@ -1,0 +1,28 @@
+/*
+dark-grey: #393939
+dark-orange: #FF5A09
+medium-orange: #F3843E
+light-orange: #FF9900
+light-grey: #6E6E6E
+*/
+
+body {
+	background-image: url("images/piano.jpg");
+	width: 1920px;
+}
+h1 {
+	margin-bottom: 20px!important;
+}
+#opening_nav {
+	margin-left: 10%;
+	margin-top: 78%;
+}
+/*NAV LINK CSS*/
+.nav-element {
+	color: #393939;
+	font-size: 1.2em!important;
+	margin-left: 20px;
+}
+	.nav-element:hover {
+		color: #FF5A09;
+	}

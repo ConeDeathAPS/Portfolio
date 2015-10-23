@@ -1,0 +1,12 @@
+/*
+dark-grey: #393939
+dark-orange: #FF5A09
+medium-orange: #F3843E
+light-orange: #FF9900
+light-grey: #6E6E6E
+*/
+
+body {
+	background-image: url("images/orange_mic.png");
+	width: 1920px;
+}
