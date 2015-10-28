@@ -3,6 +3,8 @@ require 'sinatra'
 class Project < Sinatra::Base
 end
 
+set :public, 'public'
+
 get '/' do
 	erb :index
 end
