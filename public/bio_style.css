@@ -14,6 +14,13 @@ body {
 }
 .time_container {
 	background-color: #6E6E6E;
+	margin: 0px 300px;
+	padding: 20px;
+}
+.time_container p {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #FF9900;
 }
 img {
 	width: 300px;
@@ -30,13 +37,20 @@ h1, h2 {
 }
 h2 {
 	color: #FF9900!important;
-	padding: 150px 0px;
+	padding-top: 50px;
+	padding-bottom: 100px;
 	width: 100%;
 	font-size: 3em!important;
 	vertical-align: middle;
 	margin-bottom: 20px!important;
 }
-p {
-	
+.icon {
+	margin-left: 20px;
 }
+#icons {
+	border-bottom: 2px solid #FF5A09;
+	text-align: center;
+	margin-top: 20px;
+}
+
 

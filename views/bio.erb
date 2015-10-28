@@ -7,12 +7,19 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="bootstrap.min.js"></script>
 	<script type="text/javascript" src="charter/charter.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$("img").slideDown(750, "easeOutElastic").delay(500);
-
+		$(".icon > i").hover(function() {
+			$(this).removeClass("fa-2x");
+			$(this).addClass("fa-3x");
+		}, function() {
+			$(this).addClass("fa-2x");
+			$(this).removeClass("fa-3x");
+		})
 	})
 	</script>
 </head>
@@ -21,21 +28,24 @@
 <h1 class="banner">A Short Bio...</h1>
 <div class="row">
 	<h2>Past...</h2>
-	<div class="time_container" class="one"hidden>
+	<div class="time_container" class="one">
 		<p>Through my past experience in sales, I learned how to be a valuable member of a team, developed top-notch communication skills, and learned to quickly build relationships with others.</p>
 	</div>
 </div>
 <div class="row">
 	<h2>Current...</h2>
-	<div class="time_container" class="two" hidden>
+	<div class="time_container" class="two">
 		<p>Having finally found where my passions and career intersect, I am a web developer that can build full-stack web apps for any purpose! I'm familiar with APIs, RESTful routing, frameworks such as AngularJS, Ember.js, CodeIgniter, Rails, and more! I love messing around with jQuery and css to make cool stuff happen, and solving back-end bugs is one of my best skills!</p>
 	</div>
 </div>
 <div class="row">
 	<h2 class="three">Future...</h2>
-	<div class="time_container" class="three" hidden>
+	<div class="time_container" class="three">
 		<p>I will have my name on some of the best web sites/web apps out there! Will yours be included?</p>
 	</div>
+</div>
+<div class="row">
+	<p id="icons"><a class="icon" href="https://www.github.com/conedeathaps"><i class="fa fa-github fa-2x"></i></a><a class="icon" href="www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin fa-2x"></i></a><a class="icon" href="www.twitter.com/conedeathaps"><i class="fa fa-twitter fa-2x"></i></a></p>
 </div>
 </body>
 </html>

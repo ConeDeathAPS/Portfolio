@@ -22,7 +22,7 @@ get '/project' do
 end
 
 get '/bio' do
-	erb :in_progress
+	erb :bio
 end
 
 get '/favicon.ico' do

@@ -30,3 +30,10 @@ h1, p, h2 {
 	.nav-element:hover {
 		color: #FF5A09;
 	}
+.icon {
+	margin-left: 20px;
+}
+#icons {
+	border-bottom: 2px solid #FF5A09;
+	width: 150px;
+}
