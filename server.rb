@@ -22,3 +22,7 @@ end
 get '/bio' do
 	erb :in_progress
 end
+
+get '/favicon.ico' do
+	redirect "images/favicon.ico"
+end
