@@ -7,12 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<script type="text/javascript" src="bootstrap/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
 	<script type="text/javascript">
 
 	$(window).on("scroll", function() {
 		var y_scroll_pos = window.pageYOffset;
 		// console.log("Scroll pos: ", y_scroll_pos);
-		var scroll_trigger1 = 1227; //change this to adjust where the header changes
+		var scroll_trigger1 = 1365; //change this to adjust where the header changes
 		//lock a header at the top of the page depending on where we are scrolled to
 		if (y_scroll_pos > scroll_trigger1) {
 			$(".header2").addClass("at_top");
@@ -26,6 +27,15 @@
 	});	
 
 	$(document).ready(function() {
+		var elements = $(".row");
+		console.log(elements);
+
+		var i = 0;
+		window.setInterval(function() {
+			$(elements[i]).animate({left: "0px"}, 1000, "easeInOutElastic", function() {});
+			i++;
+		}, 500);
+
 		$(".expand-butt").click(function() {
 			$(this).children("span").toggleClass("clicked");
 			$(this).children("span").toggleClass("un-clicked");
@@ -131,6 +141,17 @@
 		<p>This is the beautiful leider "Widmung" written by Robert Schumann, arranged for the piano by Liszt. It is tons of fun to play, the melody is amazing, and the ending is VERY satisfying to play, as you can really let go and play as loud as you possibly can.</p>
 	</div>
 </div>
-
+<div class="row recital_piece">
+	<div class="holder">
+		<h3 class="recital_title">Recital Part I</h3>
+		<iframe src="https://player.vimeo.com/video/143323966" width="880" height="470" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+	</div>
+</div>
+<div class="row recital_piece">
+	<div class="holder">
+		<h3 class="recital_title">Recital Part II</h3>
+		<iframe src="https://player.vimeo.com/video/143431604" width="880" height="470" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+	</div>
+</div>
 </body>
 </html>

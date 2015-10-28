@@ -6,10 +6,22 @@
 	<link rel="stylesheet" type="text/css" href="index_style.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<script type="text/javascript" src="bootstrap/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-
+		//put elements into an array
+		var elements = [$("h1"), $("h2")];
+		$("p").each(function() {
+			elements.push($(this));
+		});
+		console.log(elements);
+		//iterate through the array every 250ms and perform an animation
+		var i = 0;
+		window.setInterval(function() {
+			$(elements[i]).animate({left: "0px"}, 750, "easeOutElastic", function() {});
+			i++;
+		}, 250);	
 	})
 	</script>
 </head>
@@ -18,6 +30,7 @@
 	<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 		<div id="opening_nav">
 			<h1>Andrew Sorensen</h1>
+			<h2>Web Developer Extraordinaire</h2>
 			<p><a class="nav-element" href="/projects">Projects <span class="glyphicon glyphicon-tasks"></span></a></p>
 			<p><a class="nav-element" href="/bio">Bio <span class="glyphicon glyphicon-user"></span></a></p>
 			<p><a class="nav-element" href="/music">Music <span class="glyphicon glyphicon-music"></span></a></p>

@@ -3,24 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Bio</title>
-	<link rel="stylesheet" type="text/css" href="music_style.css">
+	<link rel="stylesheet" type="text/css" href="bio_style.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<script type="text/javascript" src="bootstrap/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="charter/charter.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-		
-	})
+		$("img").slideDown(750, "easeOutElastic").delay(500);
 
+	})
 	</script>
 </head>
 <body>
-<h1 class="banner">Who am I?</h1>
-<div class="container">
-	<div class="row">
-		
+<img src="images/Profile_pic1.jpg" alt="Profile picture" hidden>
+<h1 class="banner">A Short Bio...</h1>
+<div class="row">
+	<h2>Past...</h2>
+	<div class="time_container" class="one"hidden>
+		<p>Through my past experience in sales, I learned how to be a valuable member of a team, developed top-notch communication skills, and learned to quickly build relationships with others.</p>
 	</div>
-</div>	
+</div>
+<div class="row">
+	<h2>Current...</h2>
+	<div class="time_container" class="two" hidden>
+		<p>Having finally found where my passions and career intersect, I am a web developer that can build full-stack web apps for any purpose! I'm familiar with APIs, RESTful routing, frameworks such as AngularJS, Ember.js, CodeIgniter, Rails, and more! I love messing around with jQuery and css to make cool stuff happen, and solving back-end bugs is one of my best skills!</p>
+	</div>
+</div>
+<div class="row">
+	<h2 class="three">Future...</h2>
+	<div class="time_container" class="three" hidden>
+		<p>I will have my name on some of the best web sites/web apps out there! Will yours be included?</p>
+	</div>
+</div>
 </body>
 </html>

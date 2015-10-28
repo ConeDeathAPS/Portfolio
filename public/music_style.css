@@ -45,6 +45,10 @@ light-grey: #6E6E6E
 	z-index: -1!important;
 	overflow: scroll;
 }
+.row {
+	position: relative!important;
+	left: -2000px;
+}
 /*Musical piece and modal CSS */
 .musical_piece:first-child {
 	margin-top: 100px!important;
@@ -55,7 +59,7 @@ light-grey: #6E6E6E
 	margin: 150px 500px!important;
 	box-shadow: 5px 5px 10px black;
 	overflow: hidden;
-	border: 5px solid rgba(255, 153, 0, .5);
+	outline: 5px solid rgba(110, 110, 110, .7);
 }
 h1 {
 	color: #393939!important;
@@ -122,7 +126,11 @@ h1 {
 	background-color: #393939; 
 	margin: 150px 500px!important;
 	box-shadow: 5px 5px 10px black;
+	outline: 5px solid rgba(255, 90, 9, .7);
 }
 .recital_piece h3, .recital_piece h4, .recital_piece p {
 	color: #FF9900;
+}
+.recital_title {
+	text-align: center;
 }

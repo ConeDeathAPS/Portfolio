@@ -17,6 +17,10 @@ h1 {
 	margin-left: 10%;
 	margin-top: 78%;
 }
+h1, p, h2 {
+	position: relative!important;
+	left: -900px;
+}
 /*NAV LINK CSS*/
 .nav-element {
 	color: #393939;

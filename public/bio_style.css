@@ -5,7 +5,38 @@ medium-orange: #F3843E
 light-orange: #FF9900
 light-grey: #6E6E6E
 */
-
+body {
+	background-color: #393939!important;
+}
 .banner {
 	font-size: 6em;
+	color: #FF9900;
 }
+.time_container {
+	background-color: #6E6E6E;
+}
+img {
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+	display: block;
+	padding: 20px;
+	border-top: 4px double #FF9900!important;
+	border-bottom: 4px double #FF9900!important;
+
+}
+h1, h2 {
+	text-align: center;
+}
+h2 {
+	color: #FF9900!important;
+	padding: 150px 0px;
+	width: 100%;
+	font-size: 3em!important;
+	vertical-align: middle;
+	margin-bottom: 20px!important;
+}
+p {
+	
+}
+
