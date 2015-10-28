@@ -20,20 +20,21 @@ light-grey: #6E6E6E
 }
 /*END JQUERY HEADER CLASSES */
 /*Header and main container css */
-.header1 {
+#header {
 	width: 100%;
 	height: 70px;
-	background-color: #FF9900;
+	background-color: #FF5A09;
 	box-shadow: 0px 3px 5px black;
 	z-index: 999;
 }
-.header2 {
+#header2 {
 	width: 100%;
 	height: 70px;
 	position: static;
 	background-color: #6E6E6E;
 	box-shadow: 0px 3px 5px black;	
 	z-index: 1000;
+	padding: .5px;
 }
 .container {
 	background-image: url("images/sheet_music.jpg");
@@ -55,16 +56,15 @@ light-grey: #6E6E6E
 }
 .musical_piece {
 	padding: 10px 10px!important;
-	background-color: #FF5A09; 
+	background-color: #FF9900; 
 	margin: 150px 500px!important;
 	box-shadow: 5px 5px 10px black;
 	overflow: hidden;
-	outline: 5px solid rgba(110, 110, 110, .7);
+	outline: 5px solid rgba(110, 110, 110, .8);
 }
 h1 {
 	color: #393939!important;
 	text-align: center;
-	margin-bottom: 50px!important;
 }
 .get_sheet {
 	margin-left: 40%;
@@ -82,14 +82,10 @@ h1 {
 	display: block!important;
 	margin: 0 auto;
 	color: #393939;
-	background-color: #FF5A09!important; 
-	-webkit-transition: 0.5s ease all;
-	-moz-transition: 0.5s ease all;
-	-o-transition: 0.5s ease all;
-	transition: 0.5s ease all;
+	background-color: #FF9900!important; 
 }
 	.expand-butt:hover {
-		background-color: #FF5A09!important;
+		background-color: #FF9900!important;
 		color: white!important;
 	}
 	.clicked {
@@ -99,16 +95,11 @@ h1 {
 		-o-transition: 0.5s ease all;
 		transition: 0.5s ease all;		
 	}
-	.un-clicked {
-		transform: rotateX(-180deg);	  
-		-webkit-transition: 0.5s ease all;
-		-moz-transition: 0.5s ease all;
-		-o-transition: 0.5s ease all;
-		transition: 0.5s ease all;		
-	}
 .btn {
-
 	border-radius: 0px!important;
+}
+.btn:focus {
+	outline: none;
 }
 .btn-default {
 	border: none!important;

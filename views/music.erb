@@ -10,26 +10,28 @@
 	<script type="text/javascript" src="jquery-ui.js"></script>
 	<script type="text/javascript">
 
+	var scroll_threshold = 800;
+	//change the header at the top of the page depending on where we are scrolled to
 	$(window).on("scroll", function() {
-		var y_scroll_pos = window.pageYOffset;
-		// console.log("Scroll pos: ", y_scroll_pos);
-		var scroll_trigger1 = 1365; //change this to adjust where the header changes
-		//lock a header at the top of the page depending on where we are scrolled to
-		if (y_scroll_pos > scroll_trigger1) {
-			$(".header2").addClass("at_top");
-			$(".header1").removeClass("at_top");
-			$(".header1").addClass("stopped");
-		} else if (y_scroll_pos <= scroll_trigger1) {
-			$(".header1").addClass("at_top");
-			$(".header2").removeClass("at_top");
-			$(".header2").addClass("stopped");
+		var scroll_pos = window.pageYOffset;
+		console.log(scroll_pos);
+		if (scroll_pos >= scroll_threshold) {
+			$("#header").css("background-color", "#6E6E6E");
+			$("#header > h1").html("Senior Recital");
+		} 
+		else if (scroll_pos < scroll_threshold) {
+			$("#header").css("background-color", "#FF5A09");
+			$("#header > h1").html("Works in progress...");
 		}		
 	});	
 
+	//bring in the containers from the left with easing.
 	$(document).ready(function() {
 		var elements = $(".row");
-		console.log(elements);
+		// console.log(elements);
 
+		//go through the array of elements, easing one in at a time
+		//also update the threshold for changing the header, as the document will be longer when a video is shown
 		var i = 0;
 		window.setInterval(function() {
 			$(elements[i]).animate({left: "0px"}, 1000, "easeInOutElastic", function() {});
@@ -38,15 +40,23 @@
 
 		$(".expand-butt").click(function() {
 			$(this).children("span").toggleClass("clicked");
-			$(this).children("span").toggleClass("un-clicked");
-			$(this).prev("div").toggle();
+			if ($(this).parent('div').css('height') > "500px") {
+				console.log("Collapsing");
+				$(this).parent('div').animate({height: "-=480px"}, 500, "swing", function() {});
+				scroll_threshold -= 480;
+			} else {
+				console.log("Expanding");
+				$(this).parent('div').animate({height: "+=480px"}, 500, "swing", function() {});
+				scroll_threshold += 480;
+			}
+			$(this).prev('div').toggle();
 		});
 	});
 
 	</script>
 </head>
 <body>
-<div class='header1 at_top'>
+<div class='at_top' id="header">
 	<h1>Works in progress...</h1>
 </div>
 <div class="music_background" hidden>
@@ -63,7 +73,7 @@
 		<div hidden>
 			<iframe width="845" height="480" src="https://www.youtube.com/embed/vwc-nmyPm4I?controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 		</div>
-		<button type="button" class="btn expand-butt"><span class="glyphicon glyphicon-chevron-down"></span></button>	
+		<button type="button" class="btn expand-butt un-clicked"><span class="glyphicon glyphicon-chevron-down"></span></button>	
 	</div>
 </div>
 <div class="row musical_piece un_sospiro">
@@ -75,7 +85,7 @@
 		<div hidden>
 			<iframe width="845" height="480" src="https://www.youtube.com/embed/0_FCTTmr8JM?controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 		</div>
-		<button type="button" class="btn expand-butt"><span class="glyphicon glyphicon-chevron-down"></span></button>
+		<button type="button" class="btn expand-butt un-clicked"><span class="glyphicon glyphicon-chevron-down"></span></button>
 	</div>
 </div>
 <div class="row musical_piece jeux_deau">
@@ -86,12 +96,12 @@
 		<div hidden>
 			<iframe width="845" height="480" src="https://www.youtube.com/embed/J_36x1_LKgg?controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 		</div>
-		<button type="button" class="btn expand-butt"><span class="glyphicon glyphicon-chevron-down"></span></button>
+		<button type="button" class="btn expand-butt un-clicked"><span class="glyphicon glyphicon-chevron-down"></span></button>
 	</div>
 </div>
-<div class='header2'>
+<!-- <div id="header2">
 	<h1>Senior Recital</h1>
-</div>
+</div> -->
 <div class="row recital_piece">
 	<div class="holder">
 		<h3 class="composition_title">Ludwig van Beethoven - Piano Sonata No. 8 in C Minor Op. 13 - "Pathetique"</h3>

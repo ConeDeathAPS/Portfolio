@@ -19,7 +19,7 @@
 		//iterate through the array every 250ms and perform an animation
 		var i = 0;
 		window.setInterval(function() {
-			$(elements[i]).animate({left: "0px"}, 750, "easeOutElastic", function() {});
+			$(elements[i]).animate({left: "0px"}, 750, "easeInOutElastic", function() {});
 			i++;
 		}, 250);	
 	})
@@ -30,7 +30,7 @@
 	<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 		<div id="opening_nav">
 			<h1>Andrew Sorensen</h1>
-			<h2>Web Developer Extraordinaire</h2>
+			<h2>Full-Stack <br> Web Developer</h2>
 			<p><a class="nav-element" href="/projects">Projects <span class="glyphicon glyphicon-tasks"></span></a></p>
 			<p><a class="nav-element" href="/bio">Bio <span class="glyphicon glyphicon-user"></span></a></p>
 			<p><a class="nav-element" href="/music">Music <span class="glyphicon glyphicon-music"></span></a></p>
