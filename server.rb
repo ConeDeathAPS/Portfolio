@@ -26,5 +26,5 @@ get '/bio' do
 end
 
 get '/favicon.ico' do
-	redirect "images/favicon.ico"
+	redirect "images/music.ico"
 end
