@@ -50,17 +50,30 @@ light-grey: #6E6E6E
 	position: relative!important;
 	left: -2000px;
 }
+.front {
+	margin: 150px 500px!important;
+	background-color: rgba(110, 110, 110, .8);
+	padding: 10px 10px!important;
+	box-shadow: 0 0 20px white;
+	color: #F3843E;
+}
+.front h1 {
+	color: #F3843E!important;
+}
 /*Musical piece and modal CSS */
 .musical_piece:first-child {
 	margin-top: 100px!important;
 }
 .musical_piece {
 	padding: 10px 10px!important;
-	background-color: #FF9900; 
+	background-color: rgba(255, 153, 0, .8); 
 	margin: 150px 500px!important;
 	box-shadow: 5px 5px 10px black;
 	overflow: hidden;
 	outline: 5px solid rgba(110, 110, 110, .8);
+}
+.holder p:last-of-type {
+	text-align: center;
 }
 h1 {
 	color: #393939!important;
@@ -82,10 +95,13 @@ h1 {
 	display: block!important;
 	margin: 0 auto;
 	color: #393939;
-	background-color: #FF9900!important; 
+	background-color: rgba(255, 153, 0, .0)!important; 
 }
 	.expand-butt:hover {
-		background-color: #FF9900!important;
+		-webkit-transition: 0.5s ease all;
+		-moz-transition: 0.5s ease all;
+		-o-transition: 0.5s ease all;
+		transition: 0.5s ease all;	
 		color: white!important;
 	}
 	.clicked {
@@ -114,7 +130,7 @@ h1 {
 }
 .recital_piece {
 	padding: 10px 10px!important;
-	background-color: #393939; 
+	background-color: rgba(57, 57, 57, .8); 
 	margin: 150px 500px!important;
 	box-shadow: 5px 5px 10px black;
 	outline: 5px solid rgba(255, 90, 9, .7);

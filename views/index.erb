@@ -20,9 +20,9 @@
 		//iterate through the array every 250ms and perform an animation
 		var i = 0;
 		window.setInterval(function() {
-			$(elements[i]).animate({left: "0px"}, 750, "easeInOutElastic", function() {});
+			$(elements[i]).animate({left: "0px"}, 750, "easeInQuint", function() {});
 			i++;
-		}, 250);	
+		}, 100);	
 	})
 	</script>
 </head>
@@ -32,7 +32,7 @@
 		<div id="opening_nav">
 			<h1>Andrew Sorensen</h1>
 			<h2>Full-Stack <br> Web Developer</h2>
-			<p id="icons"><a class="icon" href="https://www.github.com/conedeathaps"><i class="fa fa-github fa-2x"></i></a><a class="icon" href="www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin fa-2x"></i></a><a class="icon" href="www.twitter.com/conedeathaps"><i class="fa fa-twitter fa-2x"></i></a></p>
+			<p id="icons"><a class="icon" href="https://www.github.com/conedeathaps"><i class="fa fa-github fa-2x"></i></a><a class="icon" href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin fa-2x"></i></a><a class="icon" href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter fa-2x"></i></a></p>
 			<p><a class="nav-element" href="/projects">Projects <span class="glyphicon glyphicon-tasks"></span></a></p>
 			<p><a class="nav-element" href="/bio">Bio <span class="glyphicon glyphicon-user"></span></a></p>
 			<p><a class="nav-element" href="/music">Music <span class="glyphicon glyphicon-music"></span></a></p>

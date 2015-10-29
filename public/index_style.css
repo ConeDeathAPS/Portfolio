@@ -14,17 +14,24 @@ h1 {
 	margin-bottom: 20px!important;
 }
 #opening_nav {
-	margin-left: 10%;
-	margin-top: 78%;
+	margin-left: -10%;
+	margin-top: 60%;
 }
 h1, p, h2 {
 	position: relative!important;
-	left: -720px;
+	left: -820px;
+}
+h1 {
+	font-weight: bold!important;
+	font-size: 4em!important;
+}
+h2 {
+	font-size: 2.0em!important;
 }
 /*NAV LINK CSS*/
 .nav-element {
 	color: #393939;
-	font-size: 1.2em!important;
+	font-size: 1.5em!important;
 	margin-left: 20px;
 }
 	.nav-element:hover {
