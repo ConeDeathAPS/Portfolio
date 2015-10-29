@@ -48,9 +48,18 @@ h2 {
 	margin-left: 20px;
 }
 #icons {
-	border-bottom: 2px solid #FF5A09;
 	text-align: center;
 	margin-top: 20px;
+	height: 50px!important;
+	vertical-align: middle;
 }
+.icon:hover {
+	color: #F3843E!important;
+	-webkit-transition: 0.25s ease all;
+	-moz-transition: 0.25s ease all;
+	-o-transition: 0.25s ease all;
+	transition: 0.25s ease all;	
+}
+
 
 
