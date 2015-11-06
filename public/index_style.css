@@ -7,40 +7,108 @@ light-grey: #6E6E6E
 */
 
 body {
-	background-image: url("images/piano.jpg");
-	width: 1920px;
+	font-family: 'Raleway', sans-serif!important;
+	background-color: #6E6E6E!important; 
+	height: 100%;
+	width: 100%;
 }
-h1 {
-	margin-bottom: 20px!important;
+.container-fluid {
+	padding: 0px!important;
+	margin-top: 80px;
 }
-#opening_nav {
-	margin-left: -10%;
-	margin-top: 60%;
+h1, h2, h3, h4 {
+	font-family: 'Raleway', sans-serif!important;
+	margin: 10px 0px!important;
 }
-h1, p, h2 {
-	position: relative!important;
-	left: -820px;
+p, li {
+	font-family: 'Raleway', sans-serif!important;
 }
-h1 {
-	font-weight: bold!important;
-	font-size: 4em!important;
+.nav {
+	position: fixed;
+	top: 0px;
+	background-color: #FF5A09;
+	box-shadow: 0px 5px 7px black;
+	width: 100%;
+	margin: 0px 0px 0px 0px!important;
+	padding: 0px 15px!important;
+	z-index: 1000;
 }
-h2 {
-	font-size: 2.0em!important;
+.footer {
+	position: fixed;
+	bottom: 0px;
+	z-index: 1000;
+	background-color: #FF5A09;
+	box-shadow: 0px -5px -7px black;
+	width: 100%;
+	margin: 0px 0px 0px 0px!important;
+	padding: 0px 15px!important;
+	text-align: center;
 }
-/*NAV LINK CSS*/
-.nav-element {
-	color: #393939;
-	font-size: 1.5em!important;
-	margin-left: 20px;
+.nav * {
+	text-align: center;
+	margin: 5px!important;
 }
-	.nav-element:hover {
-		color: #FF5A09;
-	}
-.icon {
-	margin-left: 20px;
+#name {
+	position: relative;
+	left: -1200px;
+}
+#title {
+	position: relative;
+	left: 1200px;
+}
+.code {
+	font-family: 'Inconsolata'!important;
+	text-align: center;
+	margin: 3% auto;
+	font-size: 2em;
+	color: #F3843E;
+}
+.floating_container {
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0px 0px 20px #FF9900;
+}
+#picture {
+	display: block;
+	margin: 20px auto;
+	height: 300px;
+	width: 300px;
 }
 #icons {
-	border-bottom: 2px solid #FF5A09;
-	width: 150px;
+	list-style-type: none;
+	display: block;
+	text-align: center;
 }
+#icons li {
+	display: inline-block;
+	margin: 15px 20px;
+	font-size: 5em;
+	position: relative;
+	left: -1200px;
+
+}
+#divider {
+	display: block;
+	margin: 0 auto;
+	height: 20px;
+	width: 0%;
+	border-bottom: 3px solid black;
+}
+.content {
+	width: 80%;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: rgba(240,240,240,1);
+	outline: 5px solid rgba(220,220,220,1)
+}
+	.inner_content {
+		padding: 5px 20px;
+	}
+.btn-default {
+	border-radius: 0px!important;
+	font-family: 'Inconsolata'!important;
+}
+#projects * {
+	display: inline-block;
+}
+

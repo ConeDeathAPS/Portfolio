@@ -5,39 +5,177 @@
 	<title>Andrew Sorensen</title>
 	<link rel="stylesheet" type="text/css" href="index_style.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:400,700,100,200,300,500,600,800,900' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="bootstrap.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function() {
-		//put elements into an array
-		var elements = [$("h1"), $("h2")];
-		$("p").each(function() {
-			elements.push($(this));
-		});
-		console.log(elements);
-		//iterate through the array every 250ms and perform an animation
+
+	var typer = function(string, target) {
 		var i = 0;
-		window.setInterval(function() {
-			$(elements[i]).animate({left: "0px"}, 750, "easeInQuint", function() {});
-			i++;
-		}, 100);	
+		setInterval(function() {
+			if (ending[i] === undefined) {
+				return false;
+			} else {
+				console.log(ending[i], string);
+				target.append(ending[i]);
+				i++;
+			}
+		}, 200);
+	}
+	var typed = false;
+	var ending = '</andrew>';
+	$(document).ready(function() {
+		$("#name").animate({left: "0px"}, 750, "easeOutCubic", function() {});
+		$("#title").animate({left: "0px"}, 750, "easeOutCubic", function() {});
+		$(".icon").animate({left: "0px"}, 750, "easeOutBounce", function() {
+			$("#divider").animate({width: "75%"}, 750, "easeOutElastic", function() {});
+		});
+
 	})
+	$(document).on("scroll", function() {
+		if (window.pageYOffset >= ($(document).height() - window.innerHeight)-10 && !typed) {
+			typed = true;
+			typer(ending, $(".last"));
+			return false;
+		}
+	})
+
 	</script>
 </head>
 <body>
-<div class="row">
-	<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-		<div id="opening_nav">
-			<h1>Andrew Sorensen</h1>
-			<h2>Full-Stack <br> Web Developer</h2>
-			<p id="icons"><a class="icon" href="https://www.github.com/conedeathaps"><i class="fa fa-github fa-2x"></i></a><a class="icon" href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin fa-2x"></i></a><a class="icon" href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter fa-2x"></i></a></p>
-			<p><a class="nav-element" href="/projects">Projects <span class="glyphicon glyphicon-tasks"></span></a></p>
-			<p><a class="nav-element" href="/bio">Bio <span class="glyphicon glyphicon-user"></span></a></p>
-			<p><a class="nav-element" href="/music">Music <span class="glyphicon glyphicon-music"></span></a></p>
+<div class="nav">
+	<h1 id="name">Andrew-Sorensen</h1>
+	<h3 id="title">Dynamics-Oriented Front-End Developer</h3>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<p class="code first"><span style="color:white;">&lt;</span>andrew<span style="color:white;">&gt;</span></code></p>
+	</div>
+	<div class="row">
+		<div class="floating_container col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+			<img id="picture" src="images/Profile_pic1.jpg" alt="Profile Picture">
+				<ul id="icons">
+					<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
+					<li class="icon">|</li>
+					<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin"></i></a></li>
+					<li class="icon">|</li>
+					<li class="icon"><a href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter"></i></a></li>
+				</ul>
+			<div id="divider">
+
+			</div>
+			<div class="content">
+				<h3>Background...</h3>
+				<p class="inner_content">A recent graduate of Coding Dojo, I am a very thorough Web Developer with a real passion for technology and improving the user experience. I have a BA in Music from Central Washington University and I am always using my artistic side to complement the logicality of coding.</p>
+				<p class="inner_content">Prior to Coding Dojo, I held a couple of positions in Sales. Ths first was a position selling Audis for what has now become Audi Bellevue. This was the result of a promotion up from being a Lot Porter, because I wanted to learn some skills that I knew would be very valuable throghout the rest of my career:</p>
+				<ul>
+					<li>Relationship building.</li>
+					<li>Customer experience management.</li>
+					<li>Working under pressure.</li>
+					<li>Salesmanship.</li>
+				</ul>
+				<p class="inner_content">After I felt I had learned those skills, I desired more. However, I also needed a change of pace from selling cars. I took a position as a Leasing Consultant with Essex Property Trust, and remained there until the opportunity at Coding Dojo came up and I decided that I needed to follow my passion.</p>
+				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under pressure with our timed full-stack exams, how to code cleanly, how to be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
+				<p class="inner_content">Check out some of my projects below! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
+			</div>
+			<div class="content">
+				<h3>Projects!</h3>
+				<div class="inner_content">
+					<ul id="projects">
+						<li><button data-toggle="modal" data-target="#F1Modal" class="btn btn-default">Formula1 DataBucket</button> <span class="glyphicon glyphicon-arrow-right"></span> <p>Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.</p></li>
+						<li><button data-toggle="modal" data-target="#VCModal" class="btn btn-default">Voice-Chat</button> <span class="glyphicon glyphicon-arrow-right"></span> <p>Uses WebRTC for peer-to-peer audio streaming, MEAN stack. Also uses Socket.io for text chat.</p></li>
+						<li><button data-toggle="modal" data-target="#EvitModal"  class="btn btn-default">EvitOrg</button> <span class="glyphicon glyphicon-arrow-right"></span> <p>Event Organization app using Rails. Team project with <a href="http://www.linkedin.com/in/erikarudzis">Erika Rudzis.</a></p></li>
+						<li><button data-toggle="modal" data-target="#MagModal" class="btn btn-default">Magrathea</button> <span class="glyphicon glyphicon-arrow-right"></span> <p>Our first project! eCommerce app using LAMP. Team project with <a href="http://www.linkedin.com/in/brandonwebdev">Brandon Williams</a> and <a href="http://www.linkedin.com/in/erikarudzis">Erika Rudzis.</a></p></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
+	<div class="row">
+		<p class="code last"><span style="color:white;"><!--&lt;--></span><!-- /andrew --><span style="color:white;"><!-- &gt; --></span></code></p>
+	</div>
+</div>
+<!--MODALS-->
+<!-- Formula1 Databucket -->
+<div class="modal fade" id="F1Modal" tabindex="-1" role="dialog" aria-labelledby="F1Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="F1Label">Formula1 DataBucket</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="#" class="btn btn-primary">It's live!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Formula1 Databucket -->
+<div class="modal fade" id="VCModal" tabindex="-1" role="dialog" aria-labelledby="VCLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="VCLabel">Voice-Chat</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="#" class="btn btn-primary">It's live!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Formula1 Databucket -->
+<div class="modal fade" id="EvitModal" tabindex="-1" role="dialog" aria-labelledby="EvitLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="EvitLabel">EvitOrg</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="#" class="btn btn-primary">It's live!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Formula1 Databucket -->
+<div class="modal fade" id="MagModal" tabindex="-1" role="dialog" aria-labelledby="MagLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="MagLabel">MagModal</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="#" class="btn btn-primary">It's live!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--END MODALS-->
+<div class="footer">
+	<h4>ConeDeathAPS - Updated 11/5/2015 at 3:53pm PST</h4>
+	<img src="">
 </div>
 
 </body>
