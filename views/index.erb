@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Andrew Sorensen</title>
-	<link rel="stylesheet" type="text/css" href="index_style.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./static/index_style.css">
+	<link rel="stylesheet" type="text/css" href="./static/bootstrap.css">
 	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:400,700,100,200,300,500,600,800,900' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src="jquery-ui.js"></script>
+	<script type="text/javascript" src="./static/jquery.min.js"></script>
+	<script type="text/javascript" src="./static/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="./static/bootstrap.min.js"></script>
 	<script type="text/javascript">
 
 	var typer = function(string, target) {
@@ -18,8 +18,12 @@
 			if (ending[i] === undefined) {
 				return false;
 			} else {
-				console.log(ending[i], string);
-				target.append(ending[i]);
+				if (i===0 || i===ending.length-1) {
+					target.append("<span style='color:white'>" + ending[i] + "</span>");
+				} else {
+					console.log(ending[i], string);
+					target.append(ending[i]);					
+				}
 				i++;
 			}
 		}, 200);
@@ -47,7 +51,7 @@
 <body>
 <div class="nav">
 	<h1 id="name">Andrew-Sorensen</h1>
-	<h3 id="title">Dynamics-Oriented Front-End Developer</h3>
+	<h3 id="title">Front-End Developer</h3>
 </div>
 <div class="container-fluid">
 	<div class="row">
@@ -107,11 +111,15 @@
         <h4 class="modal-title" id="F1Label">Formula1 DataBucket</h4>
       </div>
       <div class="modal-body">
-        
+      <img class="modal_main" src="images/F1DB_main.png" alt="F1_Track">
+        <p>This project was inspired by my passion for Formula 1. It uses get requests to the Ergast API to retrieve fastest laps for tracks and Driver/Team information. Please be patient as the API is very slow to respond at times :-P</p>
+        <p>The only page reloading that happens is when you click on a nav button at the top. Everything else is done via AJAX.</p>
+        <p>The graphs that are displayed on the driver and team pages are created by a custom graphing library that I built from scratch.</p>
+        <img class="modal_main" src="images/F1DB_team.png" alt="F1_Ferrari">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-primary">It's live!</a>
+        <a href="#" class="btn btn-primary" disabled>It's live!</a>
       </div>
     </div>
   </div>
@@ -125,6 +133,7 @@
         <h4 class="modal-title" id="VCLabel">Voice-Chat</h4>
       </div>
       <div class="modal-body">
+        <p>Coming soon!</p>
         
       </div>
       <div class="modal-footer">
@@ -143,6 +152,7 @@
         <h4 class="modal-title" id="EvitLabel">EvitOrg</h4>
       </div>
       <div class="modal-body">
+        <p>Coming soon!</p>
         
       </div>
       <div class="modal-footer">
@@ -161,6 +171,7 @@
         <h4 class="modal-title" id="MagLabel">MagModal</h4>
       </div>
       <div class="modal-body">
+        <p>Coming soon!</p>
         
       </div>
       <div class="modal-footer">
