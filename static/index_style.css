@@ -11,6 +11,7 @@ body {
 	background-color: #6E6E6E!important; 
 	height: 100%;
 	width: 100%;
+	overflow-x: hidden;
 }
 .container-fluid {
 	padding: 0px!important;
@@ -80,6 +81,8 @@ p, li {
 	border-radius: 5px;
 }
 #icons {
+	position: relative;
+	top: -700px;
 	list-style-type: none;
 	display: block;
 	text-align: center;
@@ -88,8 +91,6 @@ p, li {
 	display: inline-block;
 	margin: 15px 20px;
 	font-size: 5em;
-	position: relative;
-	left: -1200px;
 }
 #icons li i {
 	color: #FF5A09;
