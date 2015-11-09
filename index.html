@@ -110,15 +110,16 @@
         <h4 class="modal-title" id="F1Label">Formula1 DataBucket</h4>
       </div>
       <div class="modal-body">
-      <img class="modal_main" src="./static/images/F1DB_main.png" alt="F1_Track">
+      <img src="./static/images/F1DB_main.png" alt="F1_Track">
         <p>This project was inspired by my passion for Formula 1. It uses get requests to the Ergast API to retrieve fastest laps for tracks and Driver/Team information. Please be patient as the API is very slow to respond at times :-P</p>
         <p>The only page reloading that happens is when you click on a nav button at the top. Everything else is done via AJAX.</p>
         <p>The graphs that are displayed on the driver and team pages are created by a custom graphing library that I built from scratch.</p>
-        <img class="modal_main" src="./static/images/F1DB_team.png" alt="F1_Ferrari">
+        <img src="./static/images/F1DB_team.png" alt="F1_Ferrari">
+        <p>I am working to ger this project live ASAP. However, Heroku and CodeIgniter are not getting along very well. I appreciate your patience!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-primary" disabled>It's live!</a>
+        <a href="http://f1-datahub.herokuapp.com" class="btn btn-primary">It's live!</a>
       </div>
     </div>
   </div>
@@ -132,12 +133,17 @@
         <h4 class="modal-title" id="VCLabel">Voice-Chat</h4>
       </div>
       <div class="modal-body">
-        <p>Coming soon!</p>
-        
+        <img src="./static/images/voicechat_main.png" alt="VoiceChat main page">
+        <p>Voice-chat is an app that was incredibly difficult to program and is still a work in progress. It utilizes WebRTC and Socket.io to negotiate a peer-to-peer connection between two broswers and pass their own audio streams to each other. It also has a real-time chat function and user-status updates.</p>
+        <img src="./static/images/voicechat_chat.png" alt="VoiceChat chat page">
+        <p>Right now, the only thing that doesn't work is the audio stream transfer. Connections are being negotiated, but the final step of the connection which involves the audio streams being passed is not functioning. I have the local audio stream being routed back into the users own audio-out, so make sure you have headphones on or you block microphone access when you load the page!</p>
+        <img src="./static/images/voicechat_admin.png" alt="VoiceChat admin page">
+        <p>(I actually have a couple of friends that have accounts with this website, their personal information is redacted)</p>
+        <p>Please allow a few seconds for the app to wake up if you choose to visit it!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-primary">It's live!</a>
+        <a href="https://conedeathaps-voicechat.herokuapp.com" class="btn btn-primary">It's live!</a>
       </div>
     </div>
   </div>
@@ -151,31 +157,37 @@
         <h4 class="modal-title" id="EvitLabel">EvitOrg</h4>
       </div>
       <div class="modal-body">
-        <p>Coming soon!</p>
-        
+        <img src="./static/images/evit_main.png" alt="EvitOrg main page">
+		<p>EvitOrg is an event organization app created by Erika and I. It offers the ability to create tasks for an event that you are hosting and assign those tasks to an attendee. Others can also volunteer for a task if they are already attending. It is a Rails app that includes BCrypt, Paperclip, and Bootstrap.</p>
+		<img src="./static/images/evit_tables.png" alt="EvitOrg tables page">
+		<p>The database is SQlite3, and there is extensive jQuery that was coded by me to make the transitions from page to page look more interesting. In the future, we would like to add custom event-page styling and push notifications when a new event is created by a friend or a task is assigned to you.</p>
+		<img src="./static/images/evit_event.png" alt="EvitOrg event page">   
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-primary">It's live!</a>
+        <a href="#" class="btn btn-primary" disabled>It's live!</a>
       </div>
     </div>
   </div>
 </div>
-<!-- Formula1 Databucket -->
+<!-- Magrathea -->
 <div class="modal fade" id="MagModal" tabindex="-1" role="dialog" aria-labelledby="MagLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="MagLabel">MagModal</h4>
+        <h4 class="modal-title" id="MagLabel">Magrathea</h4>
       </div>
       <div class="modal-body">
-        <p>Coming soon!</p>
-        
+        <img src="./static/images/magrathea_main.png" alt="Magrathea main page">
+        <p>Magrathea was a super fun eCommerce project that I worked on with a couple of other colleagues. We learned the harsh lessons of Git, and how difficult collaboration can be at first. This app uses Materialize for its styling and jquery. Erika worked on the planet page which shows similar planets, Brandon worked on the cart and admin areas, and I worked on the main page with its search and categorization.</p>
+        <img src="./static/images/magrathea_planet.png" alt="Magrathea planet page">
+        <p>This app was built in LAMP stack, using CodeIgniter for its MVC framework. We built the entire app in a weeks time, and only spent a couple of hours on it recently to clear up some bugs.</p>
+        <img src="./static/images/magrathea_cart.png" alt="Magrathea cart page">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a href="#" class="btn btn-primary">It's live!</a>
+        <a href="#" class="btn btn-primary" disabled>It's live!</a>
       </div>
     </div>
   </div>
@@ -184,7 +196,7 @@
 
 <!--END MODALS-->
 <div class="footer">
-	<h4>ConeDeathAPS - Updated 11/5/2015 at 3:53pm PST</h4>
+	<h4>ConeDeathAPS - Updated 11/7/2015 at 2:43pm PST</h4>
 	<img src="">
 </div>
 
