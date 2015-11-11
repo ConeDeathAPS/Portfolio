@@ -5,14 +5,22 @@ medium-orange: #F3843E
 light-orange: #FF9900
 light-grey: #6E6E6E
 */
-
+@-webkit-keyframes animate-background {
+	from {background-color: #6E6E6E;}
+	to {background-color: #393939;}
+}
 body {
 	font-family: 'Raleway', sans-serif!important;
-	background-color: #6E6E6E!important; 
+	background-color: #6E6E6E; 
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
+	-webkit-animation-name: animate-background;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
 }
+
 .container-fluid {
 	padding: 0px!important;
 	margin-top: 80px;
