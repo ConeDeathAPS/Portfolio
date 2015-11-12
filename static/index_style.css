@@ -170,7 +170,7 @@ p, li {
 	}
 	.modal-footer {
 		box-shadow: 0px -3px 8px black;
-
+		text-align: center!important;
 	}
 	.modal-body p {
 		padding: 5px 20px;
