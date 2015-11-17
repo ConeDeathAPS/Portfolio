@@ -103,7 +103,6 @@ p, li {
 #icons li i {
 	color: #FF5A09;
 }
-
 #icons li i:hover {
 	color: rgb(199,66,0)!important;
 }
@@ -119,11 +118,73 @@ p, li {
 	margin: 20px auto;
 	padding: 10px;
 	background-color: rgba(240,240,240,1);
-	outline: 5px solid rgba(220,220,220,1)
+	outline: 5px solid rgba(220,220,220,1);
 }
 	.inner_content {
 		padding: 5px 20px;
 	}
+/*carousel CSS*/
+#carousel {
+	margin: 10px auto;
+	width: 80%;
+	padding: 10px;
+	background-color: rgba(220,220,220,1);
+}
+	#carousel img {
+		width: 100%;
+	}
+	#prev {
+		margin-top: 20%;
+		float: left;
+		font-size: 5em;
+	}
+	#next {
+		margin-top: 20%;
+		float: right;
+		font-size: 5em;
+	}
+	.carousel_move {
+		vertical-align: middle;
+		color: #FF5A09;
+	}
+	#caption {
+		margin-top: 10px;
+		margin-bottom: 0px;
+		text-align: center;
+	}
+	/*defining css3 animations for carousel icons compatible with Chrome, IE and Firefox*/
+
+	@-webkit-keyframes pulse {
+		from {font-size: 5em;}
+		to {font-size: 5.5em;}
+	}
+	@-moz-keyframes pulse {
+		from {font-size: 5em;}
+		to {font-size: 5.5em;}
+	}
+	@keyframes pulse {
+		from {font-size: 5em;}
+		to {font-size: 5.5em;}
+	}
+	/*animation implementation*/
+	#next:hover, #prev:hover {
+		-webkit-animation-name: pulse;
+		-moz-animation-name: pulse;
+		animation-name: pulse;
+		-webkit-animation-duration: 500ms;
+		-moz-animation-duration: 500ms;
+		animation-duration: 500ms;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+		-moz-animation-direction: alternate;
+		animation-direction: alternate;
+		-webkit-animation-timing-function: ease-in;
+		-moz-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+/*back to normal css*/
 .btn-default {
 	border-radius: 0px!important;
 	font-family: 'Inconsolata'!important;
@@ -171,6 +232,13 @@ p, li {
 	.modal-footer {
 		box-shadow: 0px -3px 8px black;
 		text-align: center!important;
+	}
+	.modal-footer i {
+		vertical-align: middle;
+		color: #FF5A09;
+	}
+	.modal-footer i:hover {
+		color: rgb(199,66,0);
 	}
 	.modal-body p {
 		padding: 5px 20px;
