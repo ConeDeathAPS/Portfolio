@@ -134,11 +134,17 @@ p, li {
 		width: 100%;
 	}
 	#prev {
+		-webkit-transition-duration: 500ms;
+		-moz-transition-duration: 500ms;
+		transition-duration: 500ms;	
 		margin-top: 20%;
 		float: left;
 		font-size: 5em;
 	}
 	#next {
+		-webkit-transition-duration: 500ms;
+		-moz-transition-duration: 500ms;
+		transition-duration: 500ms;	
 		margin-top: 20%;
 		float: right;
 		font-size: 5em;
@@ -152,37 +158,14 @@ p, li {
 		margin-bottom: 0px;
 		text-align: center;
 	}
-	/*defining css3 animations for carousel icons compatible with Chrome, IE and Firefox*/
-
-	@-webkit-keyframes pulse {
-		from {font-size: 5em;}
-		to {font-size: 5.5em;}
-	}
-	@-moz-keyframes pulse {
-		from {font-size: 5em;}
-		to {font-size: 5.5em;}
-	}
-	@keyframes pulse {
-		from {font-size: 5em;}
-		to {font-size: 5.5em;}
-	}
 	/*animation implementation*/
 	#next:hover, #prev:hover {
-		-webkit-animation-name: pulse;
-		-moz-animation-name: pulse;
-		animation-name: pulse;
-		-webkit-animation-duration: 500ms;
-		-moz-animation-duration: 500ms;
-		animation-duration: 500ms;
-		-webkit-animation-iteration-count: infinite;
-		-moz-animation-iteration-count: infinite;
-		animation-iteration-count: infinite;
-		-webkit-animation-direction: alternate;
-		-moz-animation-direction: alternate;
-		animation-direction: alternate;
-		-webkit-animation-timing-function: ease-in;
-		-moz-animation-timing-function: ease-in;
-		animation-timing-function: ease-in;
+		-webkit-transition-duration: 500ms;
+		-moz-transition-duration: 500ms;
+		transition-duration: 500ms;		
+		-webkit-transform: scale(1.3);
+		-moz-transform: scale(1.3);
+		transform: scale(1.3);
 	}
 /*back to normal css*/
 .btn-default {
