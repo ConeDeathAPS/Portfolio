@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="./static/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="./static/bootstrap.min.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script type="text/javascript">
 	//global variables for use in multiple areas
 	var counter = 0;
@@ -31,6 +32,7 @@
 			}
 		}, 200);
 	}
+	//===============================BEGIN CAROUSEL FUNCTIONS==========================//
 	//preload the images and return them in an array
 	var loadImages = function() {
 
@@ -38,6 +40,7 @@
 		img2 = new Image();
 		img3 = new Image();
 		img4 = new Image();
+		img5 = new Image();
 
 		img1.src = "./static/images/F1DB_team.png";
 		img1.title = String("Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<p><button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More info</button></p>");
@@ -47,8 +50,11 @@
 		img3.title = String("Event Organization app using Rails. Team project with <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#EvitModal' class='btn btn-default'>More info</button></p>");
 		img4.src = "./static/images/magrathea_main.png";
 		img4.title = String("Our first project! eCommerce app using LAMP. Team project with <a href='http://www.linkedin.com/in/brandonwebdev'>Brandon Williams</a> and <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#MagModal' class='btn btn-default'>More info</button></p>");
+		img5.src = "./static/images/winslow_main.png";
+		img5.title = String("Winslow is a hair salon in Kirkland Washington. I redesigned their website for easier access on mobile devices, and an updated look on desktop.<p><button data-toggle='modal' data-target='#WinslowModal' class='btn btn-default'>More info</button></p>");
 
-		images = [img1, img2, img3, img4];
+
+		images = [img1, img2, img3, img4, img5];
 		console.log("Loaded images", images);
 		return carouselInit(images);
 	}
@@ -81,6 +87,98 @@
 		$("#carousel").prepend(images[index]);
 		$("#caption").html(images[index].title);
 	}
+	//===============================END CAROUSEL FUNCTIONS==========================//
+	//===============================BEGIN ALGORITHM FUNCTIONS==========================//
+	var elements;
+	var data;
+	//reset the visualization
+	var buildVis = function(data) {
+		elements = [];
+		$("#bubble_sort").empty();
+		var target = document.getElementById("bubble_sort");
+		for (i = 0; i < data.length; i++) {
+			//initialize the rect element
+			var rectElement = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+			//calculate x and y pos
+			var y = 134-data[i];
+			var x = (i*2) + (i*20);
+			//set attributes
+			rectElement.setAttribute("height", data[i]);
+			rectElement.setAttribute("width", 20);
+			rectElement.setAttribute("x", x);
+			rectElement.setAttribute("y", y);
+			rectElement.setAttribute("id", "index" + i);
+			//append the rect element
+			target.appendChild(rectElement);
+			elements.push(rectElement);
+		}
+		//init and append the pointers
+		var pointerElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+		pointerElement.setAttribute("points", "10,25 5,5 15,5");
+		pointerElement.setAttribute("id", "pointer");
+		target.appendChild(pointerElement);
+		var runnerElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+		runnerElement.setAttribute("points", "32,25 27,5 37,5");
+		runnerElement.setAttribute("id", "runner");
+		target.appendChild(runnerElement);
+		console.log(elements);
+	}
+	var bubbleSort = function(data, speed) {
+		var swapped = true;
+		setInterval(function() {
+			//get elements to move
+			var indicator = document.getElementById("b_sort_indicator");
+			var pointer = document.getElementById("pointer");
+			var runnerElem = document.getElementById("runner");	
+			indicator.style.visibility = "hidden";
+			//if we made a swap, then we may not be done yet so check again for something to swap		
+			if (swapped) {
+				swapped = false;
+				var i = 0;
+				var runner = i+1;
+				transformDist = 22;
+				//move the pointers
+				pointer.setAttribute("transform", "translate("+(transformDist*i)+")");
+				runnerElem.setAttribute("transform", "translate("+(transformDist*i)+")");
+				indicator.style.visibility = "hidden";
+				setInterval(function() {
+					//perform a swap if it is needed
+					if (i < data.length-1) {
+						if (data[i] > data[runner]) {
+							indicator.style.visibility = "visible";
+							//store the current positions of the pointed and runto elements as numbers
+							var i_pos = Number(elements[i].attributes[2].value);
+							var r_pos = Number(elements[runner].attributes[2].value);
+							//swap elements visually
+							elements[i].setAttribute("x", i_pos += 22);
+							elements[runner].setAttribute("x", r_pos -= 22);
+							//swap the elements in the elements array
+							var temp = elements[i];
+							elements[i] = elements[runner];
+							elements[runner] = temp;
+							//swap in data array
+							temp = data[i];
+							data[i] = data[runner];
+							data[runner] = temp;
+							swapped = true;
+						} else {
+							indicator.style.visibility = "hidden";
+						}
+						i++;
+						runner++;	
+						pointer.setAttribute("transform", "translate("+(transformDist*i)+")");
+						runnerElem.setAttribute("transform", "translate("+(transformDist*i)+")");				
+					} else {
+						clearInterval();
+					}
+				}, speed);
+			} else {
+				return true;
+			}
+		}, speed*20);
+	}
+	//===============================END ALGORITHM FUNCTIONS==========================//
+	//==============================BEGIN JQUERY EVENT LISTENERS======================//
 	//this is here so that we only type the message once
 	var typed = false;
 	var ending = '</andrew>';
@@ -105,8 +203,20 @@
 	$(document).on("click", ".carousel_move", function() {
 		var dir = $(this).attr("id");
 		carouselTraverse(dir);
-	})
-
+	});
+	//algorithm controllers 
+	$(document).on("click", "#reset", function() {
+		data = [];
+		clearInterval();
+		for (i = 0; i < 20; i++) {
+			data[i] = Math.floor(Math.random() * 100);
+		}
+		buildVis(data);
+	});
+	$(document).on("click", "#start", function() {
+		bubbleSort(data, 250);
+	});
+//==============================START JQUERY EVENT LISTENERS========================//
 	</script>
 </head>
 <body>
@@ -153,6 +263,17 @@
 				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under pressure with our timed full-stack exams, how to code cleanly, how to be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
 				<p class="inner_content">Check out some of my projects below! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
 			</div>
+			<div class="content">
+			<h2>Algorithm Visualizations</h2>
+				<div class="thirds">
+				<h4>Bubble Sort</h4>
+				<p id="b_sort_indicator">Swapping</p>
+					<svg id="bubble_sort">
+					</svg>
+					<button class="btn btn-primary" id="reset" data-target="b_sort">Reset</button>
+					<button class="btn btn-primary" id="start" data-target="b_sort">Start!</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="row">
@@ -183,7 +304,7 @@
     </div>
   </div>
 </div>
-<!-- Formula1 Databucket -->
+<!-- VoiceChat -->
 <div class="modal fade" id="VCModal" tabindex="-1" role="dialog" aria-labelledby="VCLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -211,7 +332,7 @@
     </div>
   </div>
 </div>
-<!-- Formula1 Databucket -->
+<!-- Evit Org-->
 <div class="modal fade" id="EvitModal" tabindex="-1" role="dialog" aria-labelledby="EvitLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -235,6 +356,27 @@
       <div class="modal-footer">
 	    <a href="https://www.github.com/erudz98/Evitorg"><i class="fa fa-github fa-4x"></i></a>
         <a href="http://evitorg.herokuapp.com" class="btn btn-default btn-lg" >Try it out!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Winslow -->
+<div class="modal fade" id="WinslowModal" tabindex="-1" role="dialog" aria-labelledby="WinslowLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="WinslowLabel">Winslow</h4>
+      </div>
+      <div class="modal-body">
+        <img src="./static/images/winslow_main.png" alt="Winslow main desktop page">
+		<p>Winslow is a website created for a Kirkland, WA salon called "Winslow Salon". I worked with the owner to develop a mobile-first website from existing styles and images. </p>
+		<img src="./static/images/winslow_mobile.png" alt="EvitOrg tables page" style="width:20%;display:block;margin:0 auto;">
+		<p>This is a front-end only website, most of the time was spent ensuring that everything looked great on mobile and desktop.</p>  
+      </div>
+      <div class="modal-footer">
+	    <a href="https://www.github.com/conedeathaps/winslow"><i class="fa fa-github fa-4x"></i></a>
+        <a href="www.winslowsalon.com" class="btn btn-default btn-lg" disabled>Going live soon!</a>
       </div>
     </div>
   </div>

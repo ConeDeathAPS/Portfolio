@@ -229,3 +229,23 @@ p, li {
 	.modal-dialog {
 		width: 75%!important;
 	}
+/*ALGORITHM CSS*/
+.thirds {
+	text-align: center;
+	width: 45%;
+	margin: 0 1.5%;
+}
+#bubble_sort {
+	height: 140px;
+	width: 444px;
+	border: 3px solid rgba(220,220,220,1);
+}
+	rect {
+		fill: #FF5A09;
+	}
+	#pointer {
+		fill: #6E6E6E;
+	}
+	#runner {
+		fill: #FF5A09;
+	}
