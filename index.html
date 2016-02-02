@@ -23,7 +23,7 @@
 				return false;
 			} else {
 				if (i===0 || i===ending.length-1) {
-					target.append("<span style='color:white'>" + ending[i] + "</span>");
+					target.append(ending[i]);
 				} else {
 					console.log(ending[i], string);
 					target.append(ending[i]);					
@@ -43,15 +43,15 @@
 		img5 = new Image();
 
 		img1.src = "./static/images/F1DB_team.png";
-		img1.title = String("Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<p><button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More info</button></p>");
+		img1.title = String("Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<p><button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More about F1 Databucket</button></p>");
 		img2.src = "./static/images/voicechat_chat.png";
-		img2.title = String("Uses WebRTC for peer-to-peer audio streaming, MEAN stack. Also uses Socket.io for text chat.<p><button data-toggle='modal' data-target='#VCModal' class='btn btn-default'>More info</button></p>");
+		img2.title = String("Uses WebRTC for peer-to-peer audio streaming, MEAN stack. Also uses Socket.io for text chat.<p><button data-toggle='modal' data-target='#VCModal' class='btn btn-default'>More about Voicechat</button></p>");
 		img3.src = "./static/images/evit_event.png";
-		img3.title = String("Event Organization app using Rails. Team project with <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#EvitModal' class='btn btn-default'>More info</button></p>");
+		img3.title = String("Event Organization app using Rails. Team project with <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#EvitModal' class='btn btn-default'>More about Evitorg</button></p>");
 		img4.src = "./static/images/magrathea_main.png";
-		img4.title = String("Our first project! eCommerce app using LAMP. Team project with <a href='http://www.linkedin.com/in/brandonwebdev'>Brandon Williams</a> and <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#MagModal' class='btn btn-default'>More info</button></p>");
+		img4.title = String("Our first project! eCommerce app using LAMP. Team project with <a href='http://www.linkedin.com/in/brandonwebdev'>Brandon Williams</a> and <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#MagModal' class='btn btn-default'>More about Magrathea</button></p>");
 		img5.src = "./static/images/winslow_main.png";
-		img5.title = String("Winslow is a hair salon in Kirkland Washington. I redesigned their website for easier access on mobile devices, and an updated look on desktop.<p><button data-toggle='modal' data-target='#WinslowModal' class='btn btn-default'>More info</button></p>");
+		img5.title = String("Winslow is a hair salon in Kirkland Washington. I redesigned their website for easier access on mobile devices, and an updated look on desktop.<p><button data-toggle='modal' data-target='#WinslowModal' class='btn btn-default'>More about Winslow</button></p>");
 
 
 		images = [img1, img2, img3, img4, img5];
@@ -227,10 +227,10 @@
 </div>
 <div class="container-fluid">
 	<div class="row">
-		<p class="code first"><span style="color:white;">&lt;</span>andrew<span style="color:white;">&gt;</span></code></p>
+		<p class="code first">&lt;andrew&gt;</p>
 	</div>
 	<div class="row">
-		<div class="floating_container col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+		<div class="floating_container">
 			<img id="picture" src="./static/images/Profile_pic1.jpg" alt="Profile Picture">
 				<ul id="icons">
 					<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
@@ -240,8 +240,8 @@
 					<li class="icon"><a href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter"></i></a></li>
 				</ul>
 			<div id="divider"></div>
+			<h3 class="content_label">Projects...</h3>
 			<div class="content">
-				<h3>Projects...</h3>
 				<div class="inner_content">
 					<i class="fa fa-chevron-circle-left carousel_move" id="prev" style="display:none;"></i>
 					<i class="fa fa-chevron-circle-right carousel_move" id="next" style="display:none;"></i>
@@ -250,8 +250,8 @@
 					</div>
 				</div>
 			</div>
+			<h3 class="content_label">Background...</h3>
 			<div class="content">
-				<h3>Background...</h3>
 				<p class="inner_content">A recent graduate of Coding Dojo, I am a very thorough Web Developer with a real passion for technology and improving the user experience. I have a BA in Music from Central Washington University and I am always using my artistic side to complement the logicality of coding.</p>
 				<p class="inner_content">Prior to Coding Dojo, I held a couple of positions in Sales. Ths first was a position selling Audis for what has now become Audi Bellevue. This was the result of a promotion up from being a Lot Porter, because I wanted to learn some skills that I knew would be very valuable throghout the rest of my career:</p>
 				<ul>
@@ -262,9 +262,9 @@
 				</ul>
 				<p class="inner_content">After I felt I had learned those skills, I desired more. However, I also needed a change of pace from selling cars. I took a position as a Leasing Consultant with Essex Property Trust, and remained there until the opportunity at Coding Dojo came up and I decided that I needed to follow my passion.</p>
 				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under pressure with our timed full-stack exams, how to code cleanly, how to be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
-				<p class="inner_content">Check out some of my projects below! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
+				<p class="inner_content">Check out some of my projects above! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
 			</div>
-			<div class="content">
+			<!-- <div class="content">
 			<h2>Algorithm Visualizations</h2>
 				<div class="thirds">
 				<h4>Bubble Sort</h4>
@@ -274,11 +274,11 @@
 					<button class="btn btn-primary" id="reset" data-target="b_sort">Reset</button>
 					<button class="btn btn-primary" id="start" data-target="b_sort">Start!</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="row">
-		<p class="code last"><span style="color:white;"><!--&lt;--></span><!-- /andrew --><span style="color:white;"><!-- &gt; --></span></code></p>
+		<p class="code last"><!--&lt;/andrew&gt;--></p>
 	</div>
 </div>
 <!--MODALS-->

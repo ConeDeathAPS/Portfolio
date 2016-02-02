@@ -5,20 +5,11 @@ medium-orange: #F3843E
 light-orange: #FF9900
 light-grey: #6E6E6E
 */
-@-webkit-keyframes animate-background {
-	from {background-color: #6E6E6E;}
-	to {background-color: #393939;}
-}
 body {
 	font-family: 'Raleway', sans-serif!important;
-	background-color: #6E6E6E; 
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
-	-webkit-animation-name: animate-background;
-	-webkit-animation-duration: 4s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-direction: alternate;
 }
 
 .container-fluid {
@@ -28,6 +19,10 @@ body {
 h1, h2, h3, h4 {
 	font-family: 'Raleway', sans-serif!important;
 	margin: 10px 0px!important;
+	text-align: center;
+}
+h3 {
+	font-size: 35px!important;
 }
 p, li {
 	font-family: 'Raleway', sans-serif!important;
@@ -60,7 +55,6 @@ p, li {
 #name {
 	position: relative;
 	left: -1200px;
-	color: white;
 	font-weight: bold;
 }
 #title {
@@ -68,22 +62,24 @@ p, li {
 	left: 1200px;
 	font-family: 'Inconsolata'!important;
 	color: #393939;
+	font-size: 24px!important;
 }
 .code {
 	font-family: 'Inconsolata'!important;
 	text-align: center;
-	margin: 3% auto;
+	margin: 2% auto;
 	font-size: 2em;
-	color: #FF5A09;
+	color: #393939;
 }
+	.last {
+		margin-bottom: 80px; 
+	}
 .floating_container {
-	padding: 20px;
 	background-color: white;
-	box-shadow: 0px 0px 20px #FF5A09;
 }
 #picture {
 	display: block;
-	margin: 20px auto;
+	margin: 10px auto;
 	height: 300px;
 	width: 300px;
 	border-radius: 5px;
@@ -114,21 +110,23 @@ p, li {
 	border-bottom: 3px solid black;
 }
 .content {
-	width: 80%;
+	width: 100%;
 	margin: 20px auto;
 	padding: 10px;
-	background-color: rgba(240,240,240,1);
-	outline: 5px solid rgba(220,220,220,1);
+	background-color: rgba(0, 0, 0, .06);
 }
 	.inner_content {
 		padding: 5px 20px;
+	}
+	.content_label {
+		margin: 60px 0px!important;
 	}
 /*carousel CSS*/
 #carousel {
 	margin: 10px auto;
 	width: 80%;
 	padding: 10px;
-	background-color: rgba(220,220,220,1);
+	;
 }
 	#carousel img {
 		width: 100%;
