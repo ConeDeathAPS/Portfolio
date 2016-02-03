@@ -97,7 +97,7 @@
 		$("#bubble_sort").empty();
 		var target = document.getElementById("bubble_sort");
 		for (i = 0; i < data.length; i++) {
-			//initialize the rect element
+			//init the rect element
 			var rectElement = document.createElementNS("http://www.w3.org/2000/svg", "rect");
 			//calculate x and y pos
 			var y = 134-data[i];
@@ -231,15 +231,17 @@
 	</div>
 	<div class="row">
 		<div class="floating_container">
-			<img id="picture" src="./static/images/Profile_pic1.jpg" alt="Profile Picture">
-				<ul id="icons">
-					<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
-					<li class="icon">|</li>
-					<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin"></i></a></li>
-					<li class="icon">|</li>
-					<li class="icon"><a href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter"></i></a></li>
-				</ul>
-			<div id="divider"></div>
+			<div class="content">
+				<img id="picture" src="./static/images/Profile_pic1.jpg" alt="Profile Picture">
+					<ul id="icons">
+						<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
+						<li class="icon">|</li>
+						<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin"></i></a></li>
+						<li class="icon">|</li>
+						<li class="icon"><a href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+				<div id="divider"></div>
+			</div>
 			<h3 class="content_label">Projects...</h3>
 			<div class="content">
 				<div class="inner_content">
@@ -251,18 +253,30 @@
 				</div>
 			</div>
 			<h3 class="content_label">Background...</h3>
-			<div class="content">
+			<div class="content text_content">
 				<p class="inner_content">A recent graduate of Coding Dojo, I am a very thorough Web Developer with a real passion for technology and improving the user experience. I have a BA in Music from Central Washington University and I am always using my artistic side to complement the logicality of coding.</p>
-				<p class="inner_content">Prior to Coding Dojo, I held a couple of positions in Sales. Ths first was a position selling Audis for what has now become Audi Bellevue. This was the result of a promotion up from being a Lot Porter, because I wanted to learn some skills that I knew would be very valuable throghout the rest of my career:</p>
+				<p class="inner_content">Prior to Coding Dojo, I held a couple of positions in Sales. The first was a position selling Audis for what has now become Audi Bellevue. This was the result of a promotion up from being a Lot Porter because I wanted to learn some skills that I knew would be very valuable throghout the rest of my career:</p>
 				<ul>
-					<li>Relationship building.</li>
-					<li>Customer experience management.</li>
-					<li>Working under pressure.</li>
-					<li>Salesmanship.</li>
+					<li>Relationship building</li>
+					<li>Customer experience management</li>
+					<li>Working under pressure</li>
+					<li>Salesmanship</li>
 				</ul>
 				<p class="inner_content">After I felt I had learned those skills, I desired more. However, I also needed a change of pace from selling cars. I took a position as a Leasing Consultant with Essex Property Trust, and remained there until the opportunity at Coding Dojo came up and I decided that I needed to follow my passion.</p>
-				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under pressure with our timed full-stack exams, how to code cleanly, how to be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
+				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under a deadline with our timed full-stack exams, to code cleanly, be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
 				<p class="inner_content">Check out some of my projects above! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
+			</div>
+			<h3 class="content_label">Why am I unique?</h3>
+			<div class="content text_content">
+				<p>I always try to think of coding in the same way that I think of writing music:</p>
+				<ul>
+					<li>Certain notes don't go together - you must use the right syntax and the best languages in concert with each other.</li>
+					<li>The whole thing must progress in a certain way - keep in mind the scoping of variables and classes, hoisting, etc.</li>
+					<li>It must also be playable - it must provide an intuitive user interface with a rewarding experience for the user.</li>
+				</ul>
+				<p>Music also taught me about dedication. Spending 4-6 hours per day alone in a practice room was necessary to master control of the piano, and it is no different with coding.</p>
+				<p>I definitely bring a number of unique skills and experiences to the able. It is always difficult to find that first position in a new career, but I am confident that I have what it takes to flourish. Please do not hesitate to contact me if you think that I would fit within your team!</p>
+				<p>Sorensenapaul@gmail.com</p>
 			</div>
 			<!-- <div class="content">
 			<h2>Algorithm Visualizations</h2>
@@ -408,7 +422,7 @@
 
 <!--END MODALS-->
 <div class="footer">
-	<h4>ConeDeathAPS - Updated 1/25/2016 at 8:12am PST</h4>
+	<h4>ConeDeathAPS - Updated 2/3/2016 at 12:43pm PST</h4>
 	<img src="">
 </div>
 

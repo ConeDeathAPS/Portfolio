@@ -15,6 +15,7 @@ body {
 .container-fluid {
 	padding: 0px!important;
 	margin-top: 80px;
+	background-color: rgba(0, 0, 0, .1)!important;
 }
 h1, h2, h3, h4 {
 	font-family: 'Raleway', sans-serif!important;
@@ -30,7 +31,7 @@ p, li {
 .nav {
 	position: fixed;
 	top: 0px;
-	background-color: #FF5A09;
+	background-color: #67217A;
 	box-shadow: 0px 5px 7px black;
 	width: 100%;
 	margin: 0px 0px 0px 0px!important;
@@ -41,12 +42,15 @@ p, li {
 	position: fixed;
 	bottom: 0px;
 	z-index: 1000;
-	background-color: #FF5A09;
+	background-color: #67217A;
 	box-shadow: 0px -5px -7px black;
 	width: 100%;
 	margin: 0px 0px 0px 0px!important;
 	padding: 0px 15px!important;
 	text-align: center;
+}
+.footer h4 {
+	color: white;
 }
 .nav * {
 	text-align: center;
@@ -56,12 +60,13 @@ p, li {
 	position: relative;
 	left: -1200px;
 	font-weight: bold;
+	color: white;
 }
 #title {
 	position: relative;
 	left: 1200px;
 	font-family: 'Inconsolata'!important;
-	color: #393939;
+	color: white;
 	font-size: 24px!important;
 }
 .code {
@@ -75,7 +80,6 @@ p, li {
 		margin-bottom: 80px; 
 	}
 .floating_container {
-	background-color: white;
 }
 #picture {
 	display: block;
@@ -97,10 +101,10 @@ p, li {
 	font-size: 5em;
 }
 #icons li i {
-	color: #FF5A09;
+	color: #67217A;
 }
 #icons li i:hover {
-	color: rgb(199,66,0)!important;
+	color: #40174B!important;
 }
 #divider {
 	display: block;
@@ -109,11 +113,15 @@ p, li {
 	width: 0%;
 	border-bottom: 3px solid black;
 }
+.text_content {
+	padding-left: 11%!important;
+	padding-right: 11%!important;
+}
 .content {
 	width: 100%;
 	margin: 20px auto;
 	padding: 10px;
-	background-color: rgba(0, 0, 0, .06);
+	background: white;
 }
 	.inner_content {
 		padding: 5px 20px;
@@ -149,7 +157,7 @@ p, li {
 	}
 	.carousel_move {
 		vertical-align: middle;
-		color: #FF5A09;
+		color: #67217A;
 	}
 	#caption {
 		margin-top: 10px;
@@ -169,11 +177,11 @@ p, li {
 .btn-default {
 	border-radius: 0px!important;
 	font-family: 'Inconsolata'!important;
-	background-color: #FF5A09!important;
+	background-color: #67217A!important;
 	color: white!important;
 }
 .btn-default:hover {
-	background-color: rgb(199,66,0)!important; 
+	background-color: #40174B!important; 
 }
 #projects * {
 	display: inline-block;
