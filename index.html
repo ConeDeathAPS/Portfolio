@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="./static/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="./script.js"></script>
 	<script type="text/javascript">
 	//global variables for use in multiple areas
 	var counter = 0;
@@ -89,95 +90,7 @@
 	}
 	//===============================END CAROUSEL FUNCTIONS==========================//
 	//===============================BEGIN ALGORITHM FUNCTIONS==========================//
-	var elements;
-	var data;
-	//reset the visualization
-	var buildVis = function(data) {
-		elements = [];
-		$("#bubble_sort").empty();
-		var target = document.getElementById("bubble_sort");
-		for (i = 0; i < data.length; i++) {
-			//init the rect element
-			var rectElement = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-			//calculate x and y pos
-			var y = 134-data[i];
-			var x = (i*2) + (i*20);
-			//set attributes
-			rectElement.setAttribute("height", data[i]);
-			rectElement.setAttribute("width", 20);
-			rectElement.setAttribute("x", x);
-			rectElement.setAttribute("y", y);
-			rectElement.setAttribute("id", "index" + i);
-			//append the rect element
-			target.appendChild(rectElement);
-			elements.push(rectElement);
-		}
-		//init and append the pointers
-		var pointerElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-		pointerElement.setAttribute("points", "10,25 5,5 15,5");
-		pointerElement.setAttribute("id", "pointer");
-		target.appendChild(pointerElement);
-		var runnerElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-		runnerElement.setAttribute("points", "32,25 27,5 37,5");
-		runnerElement.setAttribute("id", "runner");
-		target.appendChild(runnerElement);
-		console.log(elements);
-	}
-
-	var bubbleSort = function(data, speed) {
-		var swapped = true;
-		setInterval(function() {
-			//get elements to move
-			var indicator = document.getElementById("b_sort_indicator");
-			var pointer = document.getElementById("pointer");
-			var runnerElem = document.getElementById("runner");	
-			indicator.style.visibility = "hidden";
-			//if we made a swap, then we may not be done yet so check again for something to swap		
-			if (swapped) {
-				swapped = false;
-				var i = 0;
-				var runner = i+1;
-				transformDist = 22;
-				//move the pointers
-				pointer.setAttribute("transform", "translate("+(transformDist*i)+")");
-				runnerElem.setAttribute("transform", "translate("+(transformDist*i)+")");
-				indicator.style.visibility = "hidden";
-				setInterval(function() {
-					//perform a swap if it is needed
-					if (i < data.length-1) {
-						if (data[i] > data[runner]) {
-							indicator.style.visibility = "visible";
-							//store the current positions of the pointed and runto elements as numbers
-							var i_pos = Number(elements[i].attributes[2].value);
-							var r_pos = Number(elements[runner].attributes[2].value);
-							//swap elements visually
-							elements[i].setAttribute("x", i_pos += 22);
-							elements[runner].setAttribute("x", r_pos -= 22);
-							//swap the elements in the elements array
-							var temp = elements[i];
-							elements[i] = elements[runner];
-							elements[runner] = temp;
-							//swap in data array
-							temp = data[i];
-							data[i] = data[runner];
-							data[runner] = temp;
-							swapped = true;
-						} else {
-							indicator.style.visibility = "hidden";
-						}
-						i++;
-						runner++;	
-						pointer.setAttribute("transform", "translate("+(transformDist*i)+")");
-						runnerElem.setAttribute("transform", "translate("+(transformDist*i)+")");				
-					} else {
-						clearInterval();
-					}
-				}, speed);
-			} else {
-				return true;
-			}
-		}, speed*20);
-	}
+	
 	//===============================END ALGORITHM FUNCTIONS==========================//
 	//==============================BEGIN JQUERY EVENT LISTENERS======================//
 	//this is here so that we only type the message once
@@ -263,7 +176,7 @@
 					<li>Salesmanship</li>
 				</ul>
 				<p class="inner_content">After I felt I had learned those skills, I desired more. However, I also needed a change of pace from selling cars. I took a position as a Leasing Consultant with Essex Property Trust, and remained there until the opportunity at Coding Dojo came up and I decided that I needed to follow my passion.</p>
-				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under a deadline with our timed full-stack exams, to code cleanly, be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails. Each in under 4.5 hours!</p>
+				<p class="inner_content">At Coding Dojo, my entire cohort and I learned a tremendous amount and gained over 1000hrs of experience in just 3 months! It taught us how to work under a deadline with our timed full-stack exams, to code cleanly, be resourceful and learn on our own. I graduated with a double black belt, meaning that I built a complete web app in LAMP, MEAN, and Rails stacks. Each in under 4.5 hours!</p>
 				<p class="inner_content">Check out some of my projects above! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
 			</div>
 			<h3 class="content_label">Why am I unique?</h3>
@@ -275,7 +188,7 @@
 					<li>It must also be playable - it must provide an intuitive user interface with a rewarding experience for the user.</li>
 				</ul>
 				<p>Music also taught me about dedication. Spending 4-6 hours per day alone in a practice room was necessary to master control of the piano, and it is no different with coding.</p>
-				<p>I definitely bring a number of unique skills and experiences to the able. It is always difficult to find that first position in a new career, but I am confident that I have what it takes to flourish. Please do not hesitate to contact me if you think that I would fit within your team!</p>
+				<p>I bring a number of unique skills and experiences to the table. It is always difficult to find that first position in a new career, but I am confident that I have what it takes to flourish. Please do not hesitate to contact me if you think that I would fit within your team!</p>
 				<p>Sorensenapaul@gmail.com</p>
 			</div>
 			<!-- <div class="content">
@@ -422,8 +335,7 @@
 
 <!--END MODALS-->
 <div class="footer">
-	<h4>ConeDeathAPS - Updated 2/3/2016 at 12:43pm PST</h4>
-	<img src="">
+	<h4>ConeDeathAPS - Updated 2/8/2016 at 1:46pm PST</h4>
 </div>
 
 </body>

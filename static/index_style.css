@@ -109,6 +109,7 @@ p, li {
 #divider {
 	display: block;
 	margin: 0 auto;
+	margin-bottom: 10px;
 	height: 20px;
 	width: 0%;
 	border-bottom: 3px solid black;
@@ -124,20 +125,23 @@ p, li {
 	background: white;
 }
 	.inner_content {
-		padding: 5px 20px;
+		padding: 0px 20px;
 	}
 	.content_label {
 		margin: 60px 0px!important;
 	}
 /*carousel CSS*/
 #carousel {
-	margin: 10px auto;
+	margin: 0 auto;
 	width: 80%;
-	padding: 10px;
+	padding: 10px 10px;
 	;
 }
 	#carousel img {
 		width: 100%;
+	}
+	#carousel p {
+		margin: 0px!important;
 	}
 	#prev {
 		-webkit-transition-duration: 500ms;
@@ -163,6 +167,9 @@ p, li {
 		margin-top: 10px;
 		margin-bottom: 0px;
 		text-align: center;
+	}
+	#caption button {
+		margin: 10px;
 	}
 	/*animation implementation*/
 	#next:hover, #prev:hover {
@@ -236,7 +243,7 @@ p, li {
 		width: 75%!important;
 	}
 /*ALGORITHM CSS*/
-.thirds {
+/*.thirds {
 	text-align: center;
 	width: 45%;
 	margin: 0 1.5%;
@@ -254,4 +261,4 @@ p, li {
 	}
 	#runner {
 		fill: #FF5A09;
-	}
+	}*/
