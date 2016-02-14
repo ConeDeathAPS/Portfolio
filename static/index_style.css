@@ -26,7 +26,8 @@ h3 {
 	font-size: 35px!important;
 }
 p, li {
-	font-family: 'Raleway', sans-serif!important;
+	font-family: 'Lato', sans-serif!important;
+	font-size: 1.3em;
 }
 .nav {
 	position: fixed;
@@ -65,7 +66,7 @@ p, li {
 #title {
 	position: relative;
 	left: 1200px;
-	font-family: 'Inconsolata'!important;
+	font-family: 'Lato'!important;
 	color: white;
 	font-size: 24px!important;
 }
@@ -94,6 +95,7 @@ p, li {
 	list-style-type: none;
 	display: block;
 	text-align: center;
+	padding: 0px!important;
 }
 #icons li {
 	display: inline-block;
@@ -129,6 +131,7 @@ p, li {
 	}
 	.content_label {
 		margin: 60px 0px!important;
+		font-weight: bold;
 	}
 /*carousel CSS*/
 #carousel {
@@ -139,6 +142,7 @@ p, li {
 }
 	#carousel img {
 		width: 100%;
+		border: 5px solid #67217A;
 	}
 	#carousel p {
 		margin: 0px!important;
