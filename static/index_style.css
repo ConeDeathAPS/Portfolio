@@ -133,8 +133,42 @@ p, li {
 		margin: 60px 0px!important;
 		font-weight: bold;
 	}
+/* PROJECTS CSS */
+#tabs {
+	text-align: center;
+}
+	#tabs li {
+		display: inline-block;
+		padding: 10px 20px;
+		padding-bottom: 0px;
+		background-color: #67217A;
+		color: white;
+		transform: skew(-30deg);
+		cursor: pointer;
+	}
+		#tabs li p {
+			transform: skew(30deg);
+			font-size: 1em;
+		}
+		#tabs li:hover {
+			background-color: #A47AAF;
+		}
+		#tab_content {
+			width: 70%;
+			margin: 0px auto;
+			text-align: center;
+		}
+		#tab_content img {
+			width: 100%;
+			border: 10px solid rgba(0, 0, 0, .1);
+		}
+		#tab_content button {
+			display: block;
+			margin: 10px auto;
+		}
+
 /*carousel CSS*/
-#carousel {
+/*#carousel {
 	margin: 0 auto;
 	width: 80%;
 	padding: 10px 10px;
@@ -174,16 +208,16 @@ p, li {
 	}
 	#caption button {
 		margin: 10px;
-	}
+	}*/
 	/*animation implementation*/
-	#next:hover, #prev:hover {
+/*	#next:hover, #prev:hover {
 		-webkit-transition-duration: 500ms;
 		-moz-transition-duration: 500ms;
 		transition-duration: 500ms;		
 		-webkit-transform: scale(1.3);
 		-moz-transform: scale(1.3);
 		transform: scale(1.3);
-	}
+	}*/
 /*back to normal css*/
 .btn-default {
 	border-radius: 0px!important;
@@ -199,22 +233,24 @@ p, li {
 }
 /* MODAL STYLING */
 .modal-body img {
-	width: 100%;
-	margin: 10px 0px;
+	display: block;
+	width: 70%;
+	margin: 10px auto;
 	z-index: 0;
 	position: relative;
+	border: 10px solid rgba(0, 0, 0, .1);
 }
 .modal-body ul {
 	list-style-type: none;
 }
 .btn-primary {
 	border-radius: 0px!important;
-	background-color: #6E6E6E!important;
+	background-color: #67217A!important;
 	color: white!important;
 	font-family: 'Inconsolata'!important;
 }
 	.btn-primary:hover {
-		background-color: #393939!important;
+		background-color: #40174B!important;
 	}
 	.modal-body {
 		max-height: 50em!important;
@@ -223,11 +259,12 @@ p, li {
 	}
 	.modal-title {
 		font-family: 'Inconsolata'!important;
-		font-size: 2em;
+		font-size: 3em;
 	}
 	.modal-header {
 	    border-bottom: 1px solid #e5e5e5;
 		box-shadow: 0px 3px 8px black;
+		padding: 5px!important;
 	}
 	.modal-footer {
 		box-shadow: 0px -3px 8px black;
@@ -235,13 +272,13 @@ p, li {
 	}
 	.modal-footer i {
 		vertical-align: middle;
-		color: #FF5A09;
+		color: #67217A;
 	}
 	.modal-footer i:hover {
-		color: rgb(199,66,0);
+		color: #40174B;
 	}
 	.modal-body p {
-		padding: 5px 20px;
+		padding: 5px 10px;
 	}
 	.modal-dialog {
 		width: 75%!important;

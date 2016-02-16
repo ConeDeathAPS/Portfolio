@@ -5,12 +5,17 @@
 	<title>Andrew Sorensen</title>
 	<link rel="stylesheet" type="text/css" href="./static/index_style.css">
 	<link rel="stylesheet" type="text/css" href="./static/bootstrap.css">
+	<!--fonts-->
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700|Inconsolata' rel='stylesheet' type='text/css'>
+	<!--jQuery/jQuery UI-->
 	<script type="text/javascript" src="./static/jquery.min.js"></script>
 	<script type="text/javascript" src="./static/jquery-ui.js"></script>
+	<!--FontAwesome for glyphs-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!--Bootstrap for Modals-->
 	<script type="text/javascript" src="./static/bootstrap.min.js"></script>
-	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<!--Local scripts-->
+	<script type="text/javascript" src="./projects.js"></script>	
 	<script type="text/javascript" src="./script.js"></script>
 	<script type="text/javascript">
 	//global variables for use in multiple areas
@@ -33,65 +38,7 @@
 			}
 		}, 200);
 	}
-	//===============================BEGIN CAROUSEL FUNCTIONS==========================//
-	//preload the images and return them in an array
-	var loadImages = function() {
 
-		img1 = new Image();
-		img2 = new Image();
-		img3 = new Image();
-		img4 = new Image();
-		img5 = new Image();
-
-		img1.src = "./static/images/F1DB_team.png";
-		img1.title = String("Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<p><button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More about F1 Databucket</button></p>");
-		img2.src = "./static/images/voicechat_chat.png";
-		img2.title = String("Uses WebRTC for peer-to-peer audio streaming, MEAN stack. Also uses Socket.io for text chat.<p><button data-toggle='modal' data-target='#VCModal' class='btn btn-default'>More about Voicechat</button></p>");
-		img3.src = "./static/images/evit_event.png";
-		img3.title = String("Event Organization app using Rails. Team project with <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#EvitModal' class='btn btn-default'>More about Evitorg</button></p>");
-		img4.src = "./static/images/magrathea_main.png";
-		img4.title = String("Our first project! eCommerce app using LAMP. Team project with <a href='http://www.linkedin.com/in/brandonwebdev'>Brandon Williams</a> and <a href='http://www.linkedin.com/in/erikarudzis'>Erika Rudzis.</a><p><button data-toggle='modal' data-target='#MagModal' class='btn btn-default'>More about Magrathea</button></p>");
-		img5.src = "./static/images/winslow_main.png";
-		img5.title = String("Winslow is a hair salon in Kirkland Washington. I redesigned their website for easier access on mobile devices, and an updated look on desktop.<p><button data-toggle='modal' data-target='#WinslowModal' class='btn btn-default'>More about Winslow</button></p>");
-
-
-		images = [img1, img2, img3, img4, img5];
-		console.log("Loaded images", images);
-		return carouselInit(images);
-	}
-	//load the first image into the carousel
-	var carouselInit = function(images) {
-		$("#carousel").prepend(images[counter]).fadeIn('fast', function() { $(".carousel_move").fadeIn('fast');});
-		$("#caption").html(images[counter].title);
-
-	}
-	//traverse the carousel based upon whatever direction the user wants to go (based upon the id attribute of the icon they clicked on)
-	var carouselTraverse = function(direction) {
-		var index;
-		//go whichever direction was clicked
-		if (direction === "next") {
-			counter++;
-		} else if (direction === "prev") {
-			counter--;
-		} else {
-			console.log("Whoops!", direction);
-		}
-		//if the counter is less than 0, then we must begin using abs()
-		//using mod so that no matter how many times they click, index will always be between 0 and 3
-		if (counter < 0) {
-			index = Math.abs(counter)%images.length;
-		} else {
-			index = counter%images.length;
-		}	
-		//remove the current image and append the next (or previous) one
-		$("#carousel > img").remove();
-		$("#carousel").prepend(images[index]);
-		$("#caption").html(images[index].title);
-	}
-	//===============================END CAROUSEL FUNCTIONS==========================//
-	//===============================BEGIN ALGORITHM FUNCTIONS==========================//
-	
-	//===============================END ALGORITHM FUNCTIONS==========================//
 	//==============================BEGIN JQUERY EVENT LISTENERS======================//
 	//this is here so that we only type the message once
 	var typed = false;
@@ -102,7 +49,6 @@
 		$("#title").animate({left: "0px"}, 750, "easeOutCubic", function() {
 			$("#icons").animate({top: "0"}, 750, "easeOutBounce", function() {});
 			$("#divider").animate({width: "75%"}, 750, "easeOutElastic", function() {});
-		loadImages();
 		});
 	});
 	//when the user scrolls to the bottom, type the closing andrew tag
@@ -113,24 +59,11 @@
 			return false;
 		}
 	});
-	//when the user clicks on a carousel icon, call the traversing function with whatever direction they clicked
-	$(document).on("click", ".carousel_move", function() {
-		var dir = $(this).attr("id");
-		carouselTraverse(dir);
-	});
-	//algorithm controllers 
-	$(document).on("click", "#reset", function() {
-		data = [];
-		clearInterval();
-		for (i = 0; i < 20; i++) {
-			data[i] = Math.floor(Math.random() * 100);
-		}
-		buildVis(data);
-	});
-	$(document).on("click", "#start", function() {
-		bubbleSort(data, 100);
-	});
-//==============================START JQUERY EVENT LISTENERS========================//
+	$(document).on("click", "#tabs > li", function() {
+		var projectID = $(this).attr("data-target");
+		getTab(projectID);
+	})
+	//==============================END JQUERY EVENT LISTENERS========================//
 	</script>
 </head>
 <body>
@@ -158,10 +91,18 @@
 			<h3 class="content_label">Projects...</h3>
 			<div class="content">
 				<div class="inner_content">
-					<i class="fa fa-chevron-circle-left carousel_move" id="prev" style="display:none;"></i>
-					<i class="fa fa-chevron-circle-right carousel_move" id="next" style="display:none;"></i>
-					<div id="carousel">
-						<p id="caption"></p>						
+					<ul id="tabs">
+						<li data-target="F1DB"><p class="tab_link" >F1-DataBucket</p></li>
+						<li data-target="VoiceChat"><p class="tab_link">VoiceChat</p></li>
+						<li data-target="Winslow"><p class="tab_link">Winslow</p></li>							
+						<li data-target="EvitOrg"><p class="tab_link">EvitOrg</p></li>
+						<li data-target="Magrathea"><p class="tab_link">Magrathea</p></li>
+						<li data-target="MCCalc"><p class="tab_link">Minecraft Calculator</p></li>
+
+					</ul>
+					<div id="tab_content">
+						<img src="./static/images/F1DB_team.png" alt="F1 team page">
+						<p>Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More about F1 Databucket</button></p>
 					</div>
 				</div>
 			</div>
@@ -219,11 +160,9 @@
       </div>
       <div class="modal-body">
       <img src="./static/images/F1DB_main.png" alt="F1_Track">
-        <p>This project was inspired by my passion for Formula 1. It uses get requests to the Ergast API to retrieve fastest laps for tracks and Driver/Team information. Please be patient as the API is very slow to respond at times :-P</p>
-        <p>The only page reloading that happens is when you click on a nav button at the top. Everything else is done via AJAX.</p>
-        <p>The graphs that are displayed on the driver and team pages are created by a custom graphing library that I built from scratch.</p>
-        <i>Updated 11/12/15 at 4:03pm --> AJAX requests are now more reliable, added indeterminate progress indicators while AJAX requests are coming through. All pages except Teams page are now responsive!</i>
-        <img src="./static/images/F1DB_team.png" alt="F1_Ferrari">
+        <p>This project was inspired by my passion for Formula 1. It uses get requests to the Ergast API to retrieve fastest laps/results for tracks and Driver/Team information and the Google Maps API to display the track's location. Unfortunately the API is relatively slow to respond, so the requests sometimes take a few seconds to complete.</p>
+        <p>An exercise in AJAX, the page only reloads when you click a link in the top navbar. The AJAX requests to the Ergast API take around 300-500 ms to return depending on your internet connection. This caused significant issues when trying to parse through and store the data locally, as the scripts would execute asynchronously and store the same data multiple times. I solved this issue by controlling the flow of the script via callbacks.</p>
+        <p>The graphs that are displayed on the driver and team pages are created by a custom graphing library that I built from scratch called <a href="https://www.github.com/conedeathaps/charter">Charter.js.</a></p>
       </div>
       <div class="modal-footer">
 	    <a href="https://www.github.com/conedeathaps/F1-DataBucket"><i class="fa fa-github fa-4x"></i></a>
@@ -238,16 +177,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="VCLabel">Voice-Chat</h4>
+        <h4 class="modal-title" id="VCLabel">VoiceChat</h4>
       </div>
       <div class="modal-body">
         <img src="./static/images/voicechat_main.png" alt="VoiceChat main page">
         <p>Voice-chat is an app that was incredibly difficult to program and is still a work in progress. It utilizes WebRTC and Socket.io to negotiate a peer-to-peer connection between two broswers and pass their own audio streams to each other. It also has a real-time chat function and user-status updates.</p>
         <img src="./static/images/voicechat_chat.png" alt="VoiceChat chat page">
-        <p>Right now, the only thing that doesn't work is the audio stream transfer. Connections are being negotiated, but the final step of the connection which involves the audio streams being passed is not functioning. I have the local audio stream being routed back into the users own audio-out, so make sure you have headphones on or you block microphone access when you load the page!</p>
+        <p>This project utilizes AngularJS for its MVC framework, and a Node.js back-end in conjunction with Express.js, Mongoose, and MongoDB.</p>
         <img src="./static/images/voicechat_admin.png" alt="VoiceChat admin page">
-        <p>(I actually have a couple of friends that have accounts with this website, their personal information is redacted)</p>
-		<p><b>Feel free to login as a guest!</b></p>
+		<p><b>Feel free to login as a guest and try out the text chat!</b></p>
 		<ul>
 			<li>Email: guest@demo.com</li>
 			<li>Password: password</li>
@@ -270,11 +208,11 @@
       </div>
       <div class="modal-body">
         <img src="./static/images/evit_main.png" alt="EvitOrg main page">
-		<p>EvitOrg is an event organization app created by Erika and I. It offers the ability to create tasks for an event that you are hosting and assign those tasks to an attendee. Others can also volunteer for a task if they are already attending. It is a Rails app that includes BCrypt, Paperclip, and Bootstrap.</p>
+		<p>EvitOrg is an event organization app created by Erika and I. It offers the ability to create tasks for an event that you are hosting and assign those tasks to an attendee. Others can also volunteer for a task if they are already attending. It is a Rails app that includes BCrypt, Paperclip, Facebook Login, and Bootstrap.</p>
 		<img src="./static/images/evit_tables.png" alt="EvitOrg tables page">
-		<p>The database is SQlite3, and there is extensive jQuery that was coded by me to make the transitions from page to page look more interesting. In the future, we would like to add custom event-page styling and push notifications when a new event is created by a friend or a task is assigned to you.</p>
+		<p>The database was originally SQLite3 (we changed it to PostgreSQL for deployment) and there is extensive jQuery that was coded by me to make the transitions from page to page look more interesting. In the future, we would like to add custom event-page styling and push notifications when a new event is created by a friend or a task is assigned to you. This would make a great Mobile App!</p>
 		<img src="./static/images/evit_event.png" alt="EvitOrg event page">   
-		<p>Image upload is not supported on heroku, as the remote database will not allow images to be uploaded to conserve space.</p>
+		<p>Image upload is not supported on heroku, as the remote database will not allow images to be uploaded for both space and security reasons.</p>
 		<p><b>Feel free to login as a guest!</b></p>
 		<ul>
 			<li>Email: demo@testing.com</li>
@@ -298,7 +236,7 @@
       </div>
       <div class="modal-body">
         <img src="./static/images/winslow_main.png" alt="Winslow main desktop page">
-		<p>Winslow is a website created for a Kirkland, WA salon called "Winslow Salon". I worked with the owner to develop a mobile-first website from existing styles and images. </p>
+		<p>Winslow is a website I created for a Kirkland, WA salon called "Winslow Salon". I worked with the owner to develop a mobile-first website from existing styling and images.</p>
 		<img src="./static/images/winslow_mobile.png" alt="EvitOrg tables page" style="width:20%;display:block;margin:0 auto;">
 		<p>This is a front-end only website, most of the time was spent ensuring that everything looked great on mobile and desktop.</p>  
       </div>
@@ -319,11 +257,11 @@
       </div>
       <div class="modal-body">
         <img src="./static/images/magrathea_main.png" alt="Magrathea main page">
-        <p>Magrathea was a super fun eCommerce project that I worked on with a couple of other colleagues. We learned the harsh lessons of Git, and how difficult collaboration can be at first. This app uses Materialize for its styling and jquery. Erika worked on the planet page which shows similar planets, Brandon worked on the cart and admin areas, and I worked on the main page with its search and categorization.</p>
+        <p>Magrathea was a super fun eCommerce project that I worked on with a couple of other colleagues. We learned the harsh lessons of Git, and how difficult collaboration can be at first. This app uses Materialize for its styling. Erika worked on the planet page which shows similar planets, Brandon worked on the cart and admin areas, and I worked on the main page with its search and categorization.</p>
         <img src="./static/images/magrathea_planet.png" alt="Magrathea planet page">
-        <p>This app was built in LAMP stack, using CodeIgniter for its MVC framework. We built the entire app in a weeks time, and only spent a couple of hours on it recently to clear up some bugs.</p>
+        <p>This app was built in LAMP stack, using CodeIgniter for its MVC framework. We built the entire app in a week's time, and only spent a couple of hours on it recently to clear up some bugs.</p>
         <img src="./static/images/magrathea_cart.png" alt="Magrathea cart page">
-		<p>Image upload is not supported on heroku, as the remote database will not allow images to be uploaded to conserve space.</p>
+		<p>Images behave oddly on Heroku. As a result, some of the images are missing or skewed.</p>
       </div>
       <div class="modal-footer">
 	    <a href="https://www.github.com/conedeathaps/Magrathea"><i class="fa fa-github fa-4x"></i></a>
@@ -332,10 +270,32 @@
     </div>
   </div>
 </div>
+<!-- Minecraft Calculator -->
+<div class="modal fade" id="MCModal" tabindex="-1" role="dialog" aria-labelledby="MCLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="MCLabel">Magrathea</h4>
+      </div>
+      <div class="modal-body">
+        <img src="./static/images/minecalc_main.png" alt="Minecraft Calc main page" style="width:20%;display:block;margin:0 auto;">
+        <p>Yet another passion project! Minecraft is an important creative outlet for me and I found myself frequently having to open the Windows calculator to figure out linear distances, figure out how many items I would need to fill X amount of chests, etc. I realized that this was a great opportunity to get into app development and streamline those operations!</p>
+        <img src="./static/images/minecalc_distance.png" alt="Minecraft Calc distance calculator" style="width:20%;display:block;margin:0 auto;">
+        <p>Learning how the Android SDK uses XML and Java together, I have been working on this app for about one week. I have both the linear distnace calculator and the item calculator functioning perfectly!</p>
+        <img src="./static/images/minecalc_items.png" alt="Minecraft Calc item calculator" style="width:20%;display:block;margin:0 auto;">
+		<p>The next, and more challenging, step is the circle helper. Being a square-based game, making circular buildings is quite difficult. I am learning how to use a canvas together with Java to dynamically generate a grid with a top-down view of the best block placement for a circle.</p>
+      </div>
+      <div class="modal-footer">
+	    <a href="https://www.github.com/conedeathaps/MinecraftCalculator"><i class="fa fa-github fa-4x"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--END MODALS-->
 <div class="footer">
-	<h4>ConeDeathAPS - Updated 2/13/2016 at 5:41pm PST</h4>
+	<h4>ConeDeathAPS - Updated 2/15/2016 at 4:44pm PST</h4>
 </div>
 
 </body>
