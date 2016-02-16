@@ -1,9 +1,8 @@
 /*
-dark-grey: #393939
-dark-orange: #FF5A09
-medium-orange: #F3843E
-light-orange: #FF9900
-light-grey: #6E6E6E
+purple: #67217A;
+light purple: #A47AAF;
+dark purple: #40174B;
+light gray: rgba(0, 0, 0, .1);
 */
 body {
 	font-family: 'Raleway', sans-serif!important;
@@ -159,7 +158,7 @@ p, li {
 			text-align: center;
 		}
 		#tab_content img {
-			width: 100%;
+			/*width: 100%;*/
 			border: 10px solid rgba(0, 0, 0, .1);
 		}
 		#tab_content button {

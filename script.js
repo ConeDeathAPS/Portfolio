@@ -149,10 +149,11 @@ var carouselTraverse = function(direction) {
 var getTab = function(ID) {
 	var projectData = projects(ID);
 	$("#tab_content > img").attr("src", projectData.img);
+	$("#tab_content > img").attr("alt", projectData.alt);
 	if (ID === "MCCalc") {
-		$("#tab_content > img").width("8%");
+		$("#tab_content > img").attr("style", "width:20%");
 	} else {
-		$("#tab_content > img").width("100%");
+		$("#tab_content > img").attr("style", "width:100%");
 	}
 	$("#tab_content > p").html(projectData.descr);
 }
