@@ -227,6 +227,14 @@ p, li {
 .btn-default:hover {
 	background-color: #40174B!important; 
 }
+.btn-default a {
+	color: white;
+	font-size: 1.3em;
+}
+.btn-default a:hover {
+	color: white;
+	text-decoration: none;
+}
 #projects * {
 	display: inline-block;
 }
