@@ -83,8 +83,6 @@
 						<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
 						<li class="icon">|</li>
 						<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin"></i></a></li>
-						<li class="icon">|</li>
-						<li class="icon"><a href="https://www.twitter.com/conedeathaps"><i class="fa fa-twitter"></i></a></li>
 					</ul>
 				<div id="divider"></div>
 			</div>
@@ -93,10 +91,7 @@
 				<div class="inner_content">
 					<ul id="tabs">
 						<li data-target="F1DB"><p class="tab_link" >F1-DataBucket</p></li>
-						<li data-target="VoiceChat"><p class="tab_link">VoiceChat</p></li>						
-						<li data-target="EvitOrg"><p class="tab_link">EvitOrg</p></li>
 						<li data-target="MCCalc"><p class="tab_link">Minecraft Calculator</p></li>
-
 					</ul>
 					<div id="tab_content">
 						<img src="./static/images/F1DB_team.png" alt="F1 team page" style="width: 100%">
@@ -107,15 +102,14 @@
 			<h3 class="content_label">Background...</h3>
 			<div class="content text_content">
 				<p class="inner_content">I am a very thorough Web Developer with a real passion for technology and improving the user experience. I have a BA in Music from Central Washington University and I am always using my artistic side to complement the logicality of coding.</p>
-				<p class="inner_content">After a relatively short stint in sales for a couple of companies, I decided that the career I really wanted was in software development. I took a risk and quit my job and went over $10k in debt to attend Coding Dojo in Bellevue. Armed with the skills required to pursue one of my passions, I secured a job with Expedia, Inc. as an Associate Software Engineer, where I am currently.</p>
-
-				<p class="inner_content">Check out some of my projects above! I will do whatever it takes to be designing the most popular websites out there in the future, will your website be one of those?</p>
+				<p class="inner_content">After a relatively short stint in sales for a couple of companies, I decided that the career I really wanted was in software development. I quit my job, moved back in with my mother, and basically hit the reset button on my life in order to attend Coding Dojo in Bellevue. Armed with the skills required to pursue one of my passions, I secured my current position with Expedia, Inc. as an Associate Software Engineer..</p>
+				<p class="inner_content">Check out some of my projects above!</p>
 			</div>
 			<h3 class="content_label">Why am I unique?</h3>
 			<div class="content text_content">
 				<p>I always try to think of coding in the same way that I think of writing music:</p>
 				<ul>
-					<li>Certain notes don't go together - you must use the right syntax and the best languages in concert with each other.</li>
+					<li>Certain notes don't go together - you must use the right syntax and the best languages/features/modules in concert with each other.</li>
 					<li>The whole thing must progress in a certain way - keep in mind the scoping of variables and classes, hoisting, etc.</li>
 					<li>It must also be playable - it must provide an intuitive user interface with a rewarding experience for the user.</li>
 				</ul>
@@ -159,81 +153,26 @@
       </div>
       <div class="modal-footer">
 	    <a href="https://www.github.com/conedeathaps/F1-DataBucket"><i class="fa fa-github fa-4x"></i></a>
-        <a href="http://f1-datahub.herokuapp.com" class="btn btn-default btn-lg">Try it out!</a>
       </div>
     </div>
   </div>
 </div>
-<!-- VoiceChat -->
-<div class="modal fade" id="VCModal" tabindex="-1" role="dialog" aria-labelledby="VCLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="VCLabel">VoiceChat</h4>
-      </div>
-      <div class="modal-body">
-        <img src="./static/images/voicechat_main.png" alt="VoiceChat main page">
-        <p>Voice-chat is an app that was incredibly difficult to program and is still a work in progress. It utilizes WebRTC and Socket.io to negotiate a peer-to-peer connection between two broswers and pass their own audio streams to each other. It also has a real-time chat function and user-status updates.</p>
-        <img src="./static/images/voicechat_chat.png" alt="VoiceChat chat page">
-        <p>This project utilizes AngularJS for its MVC framework, and a Node.js back-end in conjunction with Express.js, Mongoose, and MongoDB.</p>
-        <img src="./static/images/voicechat_admin.png" alt="VoiceChat admin page">
-		<p><b>Feel free to login as a guest and try out the text chat!</b></p>
-		<ul>
-			<li>Email: guest@demo.com</li>
-			<li>Password: password</li>
-		</ul>        
-      </div>
-      <div class="modal-footer">
-	    <a href="https://www.github.com/conedeathaps/Voice_Chat"><i class="fa fa-github fa-4x"></i></a>
-        <a href="https://conedeathaps-voicechat.herokuapp.com" class="btn btn-default btn-lg">Try it out!</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Evit Org-->
-<div class="modal fade" id="EvitModal" tabindex="-1" role="dialog" aria-labelledby="EvitLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="EvitLabel">EvitOrg</h4>
-      </div>
-      <div class="modal-body">
-        <img src="./static/images/evit_main.png" alt="EvitOrg main page">
-		<p>EvitOrg is an event organization app created by Erika and I. It offers the ability to create tasks for an event that you are hosting and assign those tasks to an attendee. Others can also volunteer for a task if they are already attending. It is a Rails app that includes BCrypt, Paperclip, Facebook Login, and Bootstrap.</p>
-		<img src="./static/images/evit_tables.png" alt="EvitOrg tables page">
-		<p>The database was originally SQLite3 (we changed it to PostgreSQL for deployment) and there is extensive jQuery that was coded by me to make the transitions from page to page look more interesting. In the future, we would like to add custom event-page styling and push notifications when a new event is created by a friend or a task is assigned to you. This would make a great Mobile App!</p>
-		<img src="./static/images/evit_event.png" alt="EvitOrg event page">   
-		<p>Image upload is not supported on heroku, as the remote database will not allow images to be uploaded for both space and security reasons.</p>
-		<p><b>Feel free to login as a guest!</b></p>
-		<ul>
-			<li>Email: demo@testing.com</li>
-			<li>Password: password</li>
-		</ul>
-      </div>
-      <div class="modal-footer">
-	    <a href="https://www.github.com/erudz98/Evitorg"><i class="fa fa-github fa-4x"></i></a>
-        <a href="http://evitorg.herokuapp.com" class="btn btn-default btn-lg" >Try it out!</a>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- Minecraft Calculator -->
 <div class="modal fade" id="MCModal" tabindex="-1" role="dialog" aria-labelledby="MCLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="MCLabel">Magrathea</h4>
+        <h4 class="modal-title" id="MCLabel">Minecraft Calculator</h4>
       </div>
       <div class="modal-body">
         <img src="./static/images/minecalc_main.png" alt="Minecraft Calc main page" style="width:20%;display:block;margin:0 auto;">
         <p>Yet another passion project! Minecraft is an important creative outlet for me and I found myself frequently having to open the Windows calculator to figure out linear distances, figure out how many items I would need to fill X amount of chests, etc. I realized that this was a great opportunity to get into app development and streamline those operations!</p>
-        <img src="./static/images/minecalc_distance.png" alt="Minecraft Calc distance calculator" style="width:20%;display:block;margin:0 auto;">
-        <p>Learning how the Android SDK uses XML and Java together, I have been working on this app for about one week. I have both the linear distnace calculator and the item calculator functioning perfectly!</p>
+        <img src="./static/images/minecalc_circle_helper.png" alt="Minecraft Calc circle helper" style="width:20%;display:block;margin:0 auto;">
+        <p>Learning how the Android SDK uses XML and Java together, I have been working on this app on and off for a year. Currently, the Linear Distance calculator, Item Calculator, and Circle helper are functioning well! The Recipe library is coming along well, I am currently in the process of loading all of the recipes by hand. After that, I need to address some layout issues.</p>
         <img src="./static/images/minecalc_items.png" alt="Minecraft Calc item calculator" style="width:20%;display:block;margin:0 auto;">
-		<p>The next, and more challenging, step is the circle helper. Being a square-based game, making circular buildings is quite difficult. I am learning how to use a canvas together with Java to dynamically generate a grid with a top-down view of the best block placement for a circle.</p>
+        <p>Once this application is finished, I will be putting it up for free on the app store.</p>
       </div>
       <div class="modal-footer">
 	    <a href="https://www.github.com/conedeathaps/MinecraftCalculator"><i class="fa fa-github fa-4x"></i></a>
@@ -244,7 +183,7 @@
 
 <!--END MODALS-->
 <div class="footer">
-	<h4>ConeDeathAPS - Updated 7/17/2016 at 8:44pm PDT</h4>
+	<h4>ConeDeathAPS - Updated 12/28/2016 at 7:00pm PST</h4>
 </div>
 
 </body>
