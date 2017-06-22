@@ -28,7 +28,7 @@ p, li {
 	font-family: 'Lato', sans-serif!important;
 	font-size: 1.3em;
 }
-.nav {
+nav {
 	position: fixed;
 	top: 0px;
 	background-color: #67217A;
@@ -38,7 +38,7 @@ p, li {
 	padding: 0px 15px!important;
 	z-index: 1000;
 }
-.footer {
+footer {
 	position: fixed;
 	bottom: 0px;
 	z-index: 1000;
@@ -49,10 +49,10 @@ p, li {
 	padding: 0px 15px!important;
 	text-align: center;
 }
-.footer h4 {
+footer h4 {
 	color: white;
 }
-.nav * {
+nav * {
 	text-align: center;
 	margin: 5px!important;
 }

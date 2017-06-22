@@ -15,8 +15,8 @@
 	<!--Bootstrap for Modals-->
 	<script type="text/javascript" src="./static/bootstrap.min.js"></script>
 	<!--Local scripts-->
-	<script type="text/javascript" src="./projects.js"></script>	
-	<script type="text/javascript" src="./script.js"></script>
+	<script type="text/javascript" src="./static/js/script.js"></script>	
+	<script type="text/javascript" src="./static/js/projects.js"></script>	
 	<script type="text/javascript">
 	//global variables for use in multiple areas
 	var counter = 0;
@@ -67,11 +67,11 @@
 	</script>
 </head>
 <body>
-<div class="nav">
-	<h1 id="name">Andrew Sorensen</h1>
-	<h3 id="title">Software Engineer</h3>
-</div>
-<div class="container-fluid">
+<nav>
+	<h1 id="name" role="First Name">Andrew Sorensen</h1>
+	<h3 id="title" role="Title">Front End Software Engineer</h3>
+</nav>
+<div class="container-fluid" role="presentation">
 	<div class="row">
 		<p class="code first">&lt;andrew&gt;</p>
 	</div>
@@ -80,9 +80,9 @@
 			<div class="content">
 				<img id="picture" src="./static/images/Profile_pic1.jpg" alt="Profile Picture">
 					<ul id="icons">
-						<li class="icon"><a href="https://www.github.com/conedeathaps"><i class="fa fa-github"></i></a></li>
+						<li class="icon"><a href="https://www.github.com/conedeathaps" alias="Github"><i class="fa fa-github"></i></a></li>
 						<li class="icon">|</li>
-						<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul"><i class="fa fa-linkedin"></i></a></li>
+						<li class="icon"><a href="https://www.linkedin.com/in/sorensenapaul" alias="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
 					</ul>
 				<div id="divider"></div>
 			</div>
@@ -90,10 +90,11 @@
 			<div class="content">
 				<div class="inner_content">
 					<ul id="tabs">
-						<li data-target="F1DB"><p class="tab_link" >F1-DataBucket</p></li>
-						<li data-target="MCCalc"><p class="tab_link">Minecraft Calculator</p></li>
+						<li data-target="F1DB" role="tab"><p class="tab_link" >F1-DataBucket</p></li>
+						<li data-target="MCCalc" role="tab"><p class="tab_link">Minecraft Calculator</p></li>
+						<li data-target="ZeroToSixty" role="tab"><p class="tab_link">Zero to Sixty</p></li>
 					</ul>
-					<div id="tab_content">
+					<div id="tab_content" role="tab-content">
 						<img src="./static/images/F1DB_team.png" alt="F1 team page" style="width: 100%">
 						<p>Uses the Ergast and Google Maps APIs, LAMP stack, and Materialize.<button data-toggle='modal' data-target='#F1Modal' class='btn btn-default'>More about F1 Databucket</button></p>
 					</div>
@@ -172,7 +173,7 @@
         <img src="./static/images/minecalc_circle_helper.png" alt="Minecraft Calc circle helper" style="width:20%;display:block;margin:0 auto;">
         <p>Learning how the Android SDK uses XML and Java together, I have been working on this app on and off for a year. Currently, the Linear Distance calculator, Item Calculator, and Circle helper are functioning well! The Recipe library is coming along well, I am currently in the process of loading all of the recipes by hand. After that, I need to address some layout issues.</p>
         <img src="./static/images/minecalc_items.png" alt="Minecraft Calc item calculator" style="width:20%;display:block;margin:0 auto;">
-        <p>Once this application is finished, I will be putting it up for free on the app store.</p>
+        <p>The application also includes a recipe helper, which contains all craftable items and the recipe/yield for each. Screenshot of that coming soon!</p>
       </div>
       <div class="modal-footer">
 	    <a href="https://www.github.com/conedeathaps/MinecraftCalculator"><i class="fa fa-github fa-4x"></i></a>
@@ -180,11 +181,30 @@
     </div>
   </div>
 </div>
-
-<!--END MODALS-->
-<div class="footer">
-	<h4>ConeDeathAPS - Updated 12/28/2016 at 7:00pm PST</h4>
+<!-- Zero to Sixty -->
+<div class="modal fade" id="ZeroToSixty" tabindex="-1" role="dialog" aria-labelledby="ZeroToSixty">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="ZeroToSixty">Zero to Sixty</h4>
+      </div>
+      <div class="modal-body">
+        <img src="./static/images/Zero-Sixty_main.png" alt="Zero To Sixty Main Page" style="width:20%;display:block;margin:0 auto;">
+        <p>This project was fueled by my desire to use the sensors built in to most phones. While measuring speed via GPS is easy, I wanted to develop a more unique solution. This application uses the linear accelerometer in most phones to create a 3D acceleration vector. Due to the nature of this method, inaccuracy accumulates over time. However, I figured that this would be acceptable since it is not intended to be used for much more than 10 seconds at a time.</p>
+        <img src="./static/images/Zero-Sixty_running.png" alt="Zero To Sixty Running" style="width:20%;display:block;margin:0 auto;">
+        <p>I added a calibration button to offset any native sensor imprecision. The app takes an acceleration measurement every 1/10th of a second until you click stop or the speed reaches 60mph. It is a bit too inaccurate for my liking at this time. (Note: odd looking speed measurements in the screenshot here are just because I was waving the phone around to get it to show some kind of speed.)</p>
+      </div>
+      <div class="modal-footer">
+	    <a href="https://www.github.com/conedeathaps/ZeroToSixty"><i class="fa fa-github fa-4x"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
+<!--END MODALS-->
+<footer>
+	<h4>ConeDeathAPS - Updated 6/21/2017 at 9:30pm PDT</h4>
+</footer>
 
 </body>
 </html>
