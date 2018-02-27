@@ -5,7 +5,7 @@ dark purple: #40174B;
 light gray: rgba(0, 0, 0, .1);
 */
 body {
-	font-family: 'Raleway', sans-serif!important;
+	font-family: 'Ubuntu', sans-serif!important;
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
@@ -17,7 +17,7 @@ body {
 	background-color: rgba(0, 0, 0, .1)!important;
 }
 h1, h2, h3, h4 {
-	font-family: 'Raleway', sans-serif!important;
+	font-family: 'Ubuntu', sans-serif!important;
 	margin: 10px 0px!important;
 	text-align: center;
 }
@@ -25,7 +25,7 @@ h3 {
 	font-size: 35px!important;
 }
 p, li {
-	font-family: 'Lato', sans-serif!important;
+	font-family: 'EB Garamond', sans-serif!important;
 	font-size: 1.3em;
 }
 nav {
@@ -65,7 +65,7 @@ nav * {
 #title {
 	position: relative;
 	left: 1200px;
-	font-family: 'Lato'!important;
+	font-family: 'EB Garamond'!important;
 	color: white;
 	font-size: 24px!important;
 }
@@ -129,7 +129,7 @@ nav * {
 		padding: 0px 20px;
 	}
 	.content_label {
-		margin: 60px 0px!important;
+		margin: 40px 0px!important;
 		font-weight: bold;
 	}
 /* PROJECTS CSS */
